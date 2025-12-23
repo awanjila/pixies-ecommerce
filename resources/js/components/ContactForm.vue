@@ -101,7 +101,8 @@
       <div class="row mt-5">
         <div class="col-12">
           <div class="google-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8508986660886!2d36.83987797477736!3d-1.2617628987262253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1716c39b8175%3A0x2b36df825d027b5e!2sLORBHEX%20SURGICALS%20LIMITED!5e0!3m2!1sen!2ske!4v1766096937957!5m2!1sen!2ske" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+           <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d31910.443638396573!2d36.896768!3d-1.2910591999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x182f134f6924b939%3A0x9497581070a52098!2sParklands%203rd%20Avenue!3m2!1d-1.2571326999999999!2d36.811707!5e0!3m2!1sen!2ske!4v1766526632541!5m2!1sen!2ske" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
           </div>
         </div>
       </div>

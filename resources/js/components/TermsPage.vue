@@ -1,11 +1,11 @@
 <template>
   <div class="min-h-screen bg-gray-50">
     <!-- Header -->
-    <div class="bg-gradient-to-r from-gray-900 to-black text-white py-16 px-4">
+    <div class="bg-gradient-to-r from-[#084c74] to-[#0a5d8a] text-white py-16 px-4">
       <div class="max-w-5xl mx-auto">
         <h1 class="text-4xl font-bold mb-4">Terms & Conditions</h1>
-        <p class="text-gray-300 text-lg">Lorbhex Surgicals Ltd - Legal Terms of Use</p>
-        <p class="text-gray-400 text-sm mt-2">Effective Date: December 15, 2025</p>
+        <p class="text-blue-50 text-lg">Wabegadgets - Legal Terms of Use</p>
+        <p class="text-blue-100 text-sm mt-2">Effective Date: December 24, 2024</p>
       </div>
     </div>
 
@@ -16,18 +16,18 @@
       <div class="bg-white rounded-lg shadow-md p-8 mb-8">
         <h2 class="text-2xl font-bold text-gray-900 mb-4">1. Introduction & Acceptance</h2>
         <p class="text-gray-700 leading-relaxed mb-4">
-          Welcome to Lorbhex Surgicals Ltd ("we," "us," "our," or "Lorbhex Surgicals"). These Terms and Conditions 
+          Welcome to Wabegadgets ("we," "us," "our," or "Wabegadgets"). These Terms and Conditions 
           ("Terms") govern your access to and use of our website at wabegadgets.co.ke (the "Website") and the 
-          purchase of medical and surgical equipment and supplies through our platform.
+          purchase of technology products, electronics, and gadgets through our platform.
         </p>
         <p class="text-gray-700 leading-relaxed mb-4">
           By accessing or using our Website, placing an order, or purchasing any products, you agree to be bound by 
           these Terms. If you do not agree to these Terms, you must not use our Website or services.
         </p>
-        <div class="bg-green-50 border-l-4 border-green-600 p-4 mt-4">
-          <p class="text-green-900 font-semibold">
+        <div class="bg-blue-50 border-l-4 border-[#084c74] p-4 mt-4">
+          <p class="text-gray-900 font-semibold">
             Please read these Terms carefully before using our services. These Terms constitute a legally binding 
-            agreement between you and Lorbhex Surgicals Ltd.
+            agreement between you and Wabegadgets.
           </p>
         </div>
       </div>
@@ -39,8 +39,8 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">2.1 Permitted Use</h3>
         <p class="text-gray-700 mb-3">You may use our Website for:</p>
         <ul class="space-y-2 ml-6 mb-4">
-          <li class="text-gray-700">• Browsing and purchasing medical and surgical equipment</li>
-          <li class="text-gray-700">• Accessing product information and specifications</li>
+          <li class="text-gray-700">• Browsing and purchasing technology products and electronics</li>
+          <li class="text-gray-700">• Accessing product information, specifications, and reviews</li>
           <li class="text-gray-700">• Contacting our customer service team</li>
           <li class="text-gray-700">• Managing your account and orders</li>
         </ul>
@@ -63,17 +63,16 @@
           <li class="text-gray-700">• Interfere with or disrupt the Website's operation</li>
           <li class="text-gray-700">• Upload viruses, malware, or harmful code</li>
           <li class="text-gray-700">• Collect information about other users without consent</li>
-  
           <li class="text-gray-700">• Misrepresent your identity or affiliation</li>
           <li class="text-gray-700">• Use automated systems (bots, scrapers) without permission</li>
+          <li class="text-gray-700">• Resell products purchased from our Website without authorization</li>
         </ul>
 
-        <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">2.4 Professional Use Only</h3>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">2.4 Age Requirement</h3>
         <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
           <p class="text-gray-800">
-            <strong>Important:</strong> Many products on our Website are intended for use by qualified medical 
-            professionals only. By purchasing these items, you represent that you are a licensed healthcare 
-            professional or are purchasing on behalf of a qualified institution.
+            <strong>Important:</strong> You must be at least 18 years old to make purchases on our Website. 
+            By placing an order, you represent that you meet this age requirement.
           </p>
         </div>
       </div>
@@ -94,23 +93,23 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">3.2 Payment Methods</h3>
         <p class="text-gray-700 mb-3">We accept the following payment methods:</p>
         <ul class="space-y-2 ml-6 mb-4">
-          <li class="text-gray-700">• M-Pesa (Safaricom, Airtel Money)</li>
+          <li class="text-gray-700">• M-Pesa (Safaricom and Airtel Money)</li>
           <li class="text-gray-700">• Bank transfers (direct deposit)</li>
           <li class="text-gray-700">• Credit/Debit cards (Visa, Mastercard)</li>
-          <li class="text-gray-700">• Institutional purchase orders (approved accounts only)</li>
+          <li class="text-gray-700">• Cash on delivery (available in Nairobi only for select items)</li>
         </ul>
 
         <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">3.3 Payment Terms</h3>
         <ul class="space-y-2 ml-6 mb-4">
           <li class="text-gray-700">• Payment is required in full before order processing</li>
-          <li class="text-gray-700">• For institutional accounts, payment terms are Net 30 days unless otherwise agreed</li>
-          <li class="text-gray-700">• Late payment may incur interest at 2% per month</li>
-          <li class="text-gray-700">• We reserve the right to suspend services for overdue accounts</li>
+          <li class="text-gray-700">• For cash on delivery, payment must be made in full upon receipt</li>
+          <li class="text-gray-700">• Failed payments may result in order cancellation</li>
+          <li class="text-gray-700">• We use secure payment gateways to protect your financial information</li>
         </ul>
 
         <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">3.4 Order Processing</h3>
         <ul class="space-y-2 ml-6 mb-4">
-          <li class="text-gray-700">• Orders are processed upon payment confirmation</li>
+          <li class="text-gray-700">• Orders are processed within 24 hours upon payment confirmation</li>
           <li class="text-gray-700">• We reserve the right to refuse or cancel any order</li>
           <li class="text-gray-700">• Order confirmation does not guarantee product availability</li>
           <li class="text-gray-700">• If a product is unavailable, we will notify you and offer alternatives or refunds</li>
@@ -123,105 +122,152 @@
         </p>
       </div>
 
-      <!-- Liability Limitations - CRITICAL -->
-      <div class="bg-red-50 border-2 border-red-300 rounded-lg p-8 mb-8">
-        <h2 class="text-2xl font-bold text-red-900 mb-4">4. Liability Limitations & Disclaimers</h2>
+      <!-- Product Information & Warranties -->
+      <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">4. Product Information & Warranties</h2>
         
-        <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">4.1 Product Use & Professional Responsibility</h3>
-        <div class="bg-white p-4 rounded mb-4">
-          <p class="text-gray-800 mb-3 font-semibold">
-            IMPORTANT: Medical and surgical equipment must be used by qualified professionals only.
-          </p>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">4.1 Product Descriptions</h3>
+        <ul class="space-y-2 ml-6 mb-4">
+          <li class="text-gray-700">• We strive for accuracy but cannot guarantee all product descriptions are error-free</li>
+          <li class="text-gray-700">• Product images may differ slightly from actual items</li>
+          <li class="text-gray-700">• Colors may vary due to screen settings and lighting</li>
+          <li class="text-gray-700">• Technical specifications are provided by manufacturers</li>
+          <li class="text-gray-700">• Always verify product compatibility with your devices before purchase</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">4.2 Manufacturer Warranties</h3>
+        <div class="bg-blue-50 p-4 rounded mb-4">
           <ul class="space-y-2 ml-6">
-            <li class="text-gray-700">• Products are sold for professional medical use only</li>
-            <li class="text-gray-700">• Users must have appropriate training and licensing</li>
-            <li class="text-gray-700">• You are solely responsible for proper use, application, and outcomes</li>
-            <li class="text-gray-700">• We are not liable for injuries, damages, or adverse outcomes from product use</li>
-            <li class="text-gray-700">• Always follow manufacturer instructions and medical best practices</li>
+            <li class="text-gray-700">• Products come with manufacturer warranties where applicable</li>
+            <li class="text-gray-700">• Warranty periods vary by product and manufacturer</li>
+            <li class="text-gray-700">• Warranty claims must be directed to the manufacturer or authorized service centers</li>
+            <li class="text-gray-700">• We assist with warranty claims but are not responsible for manufacturer decisions</li>
+            <li class="text-gray-700">• Warranty stickers and seals must remain intact for warranty validity</li>
           </ul>
         </div>
 
-        <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">4.2 Product Information & Accuracy</h3>
-        <ul class="space-y-2 ml-6 mb-4">
-          <li class="text-gray-700">• We strive for accuracy but cannot guarantee all product descriptions are error-free</li>
-          <li class="text-gray-700">• Product images may differ from actual items</li>
-          <li class="text-gray-700">• Technical specifications are provided by manufacturers</li>
-          <li class="text-gray-700">• Always verify product suitability for your specific needs before use</li>
-        </ul>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">4.3 Authenticity Guarantee</h3>
+        <p class="text-gray-700">
+          All products sold on Wabegadgets are 100% genuine and sourced from authorized distributors. We do not sell 
+          counterfeit or imitation products. If you receive a counterfeit item, please contact us immediately for 
+          a full refund and investigation.
+        </p>
+      </div>
 
-        <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">4.3 Limitation of Liability</h3>
+      <!-- Liability Limitations - CRITICAL -->
+      <div class="bg-red-50 border-2 border-red-200 rounded-lg p-8 mb-8">
+        <h2 class="text-2xl font-bold text-red-900 mb-4">5. Liability Limitations & Disclaimers</h2>
+        
+        <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">5.1 Product Use & Responsibility</h3>
+        <div class="bg-white p-4 rounded mb-4">
+          <p class="text-gray-800 mb-3 font-semibold">
+            IMPORTANT: You are responsible for proper use of all products purchased from Wabegadgets.
+          </p>
+          <ul class="space-y-2 ml-6">
+            <li class="text-gray-700">• Always read and follow manufacturer instructions carefully</li>
+            <li class="text-gray-700">• Ensure proper installation and setup of electronic devices</li>
+            <li class="text-gray-700">• Use appropriate power sources and voltage requirements</li>
+            <li class="text-gray-700">• We are not liable for damage caused by improper use or installation</li>
+            <li class="text-gray-700">• Consult professionals for complex installations when needed</li>
+          </ul>
+        </div>
+
+        <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">5.2 Limitation of Liability</h3>
         <div class="bg-white p-4 rounded mb-4">
           <p class="text-gray-800 font-semibold mb-3">TO THE MAXIMUM EXTENT PERMITTED BY LAW:</p>
           <ul class="space-y-2 ml-6">
-            <li class="text-gray-700">• Lorbhex Surgicals is not liable for any indirect, incidental, or consequential damages</li>
+            <li class="text-gray-700">• Wabegadgets is not liable for any indirect, incidental, or consequential damages</li>
             <li class="text-gray-700">• Our total liability shall not exceed the purchase price of the product in question</li>
-            <li class="text-gray-700">• We are not liable for medical malpractice, patient injuries, or treatment outcomes</li>
+            <li class="text-gray-700">• We are not liable for data loss, business interruption, or lost profits</li>
             <li class="text-gray-700">• We are not liable for losses due to product unavailability or delivery delays</li>
             <li class="text-gray-700">• We are not liable for compatibility issues with existing equipment or systems</li>
+            <li class="text-gray-700">• We are not liable for software malfunctions or third-party app issues</li>
           </ul>
         </div>
 
-        <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">4.4 Manufacturer Warranties</h3>
-        <p class="text-gray-700 mb-3">
-          Products are covered by manufacturer warranties where applicable. Warranty claims must be directed to 
-          the manufacturer. Lorbhex Surgicals acts as a distributor and is not responsible for manufacturer defects, 
-          except as required by Kenyan consumer protection law.
-        </p>
-
-        <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">4.5 Website Availability</h3>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">5.3 Website Availability</h3>
         <ul class="space-y-2 ml-6 mb-4">
           <li class="text-gray-700">• We do not guarantee uninterrupted access to our Website</li>
           <li class="text-gray-700">• The Website may be unavailable due to maintenance or technical issues</li>
-          <li class="text-gray-700">• We are not liable for losses due to Website downtime</li>
+          <li class="text-gray-700">• We are not liable for losses due to Website downtime or errors</li>
         </ul>
+
+        <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">5.4 Third-Party Links</h3>
+        <p class="text-gray-700">
+          Our Website may contain links to third-party websites. We are not responsible for the content, 
+          privacy practices, or availability of these external sites. Use them at your own risk.
+        </p>
+      </div>
+
+      <!-- Returns & Refunds -->
+      <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">6. Returns & Refunds</h2>
+        <p class="text-gray-700 mb-4">
+          Our return and refund policy is detailed in our separate Return Policy document. Key points include:
+        </p>
+        <ul class="space-y-2 ml-6 mb-4">
+          <li class="text-gray-700">• 7-day return window from date of delivery</li>
+          <li class="text-gray-700">• Items must be unused and in original sealed packaging</li>
+          <li class="text-gray-700">• Opened electronics cannot be returned unless defective</li>
+          <li class="text-gray-700">• Return authorization required before shipping items back</li>
+          <li class="text-gray-700">• Refunds processed within 5-7 business days after approval</li>
+        </ul>
+        <p class="text-gray-700">
+          Please refer to our complete Return & Refund Policy for full details and procedures.
+        </p>
       </div>
 
       <!-- Delivery & Risk -->
       <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">5. Delivery & Transfer of Risk</h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">7. Delivery & Transfer of Risk</h2>
         <ul class="space-y-3 ml-6">
           <li class="text-gray-700">• Delivery times are estimates and not guaranteed</li>
-          <li class="text-gray-700">• Risk of loss transfers to you upon delivery</li>
-          <li class="text-gray-700">• You must inspect products upon delivery and report damage within 48 hours</li>
+          <li class="text-gray-700">• Risk of loss transfers to you upon delivery and acceptance</li>
+          <li class="text-gray-700">• You must inspect products immediately upon delivery</li>
+          <li class="text-gray-700">• Report any damage or discrepancies within 48 hours</li>
           <li class="text-gray-700">• Delivery charges are non-refundable except in cases of our error</li>
-          <li class="text-gray-700">• We deliver to addresses within Kenya only unless otherwise arranged</li>
+          <li class="text-gray-700">• We deliver to addresses within Kenya unless otherwise arranged</li>
+          <li class="text-gray-700">• Ensure someone is available to receive and sign for deliveries</li>
         </ul>
       </div>
 
       <!-- Intellectual Property -->
       <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">6. Intellectual Property</h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">8. Intellectual Property</h2>
         <p class="text-gray-700 mb-4">
-          All content on this Website, including text, graphics, logos, images, and software, is the property of 
-          Lorbhex Surgicals Ltd or its licensors and is protected by Kenyan and international intellectual property laws.
+          All content on this Website, including text, graphics, logos, images, product descriptions, and software, 
+          is the property of Wabegadgets or its licensors and is protected by Kenyan and international 
+          intellectual property laws.
         </p>
         <ul class="space-y-2 ml-6">
           <li class="text-gray-700">• You may not reproduce, distribute, or modify Website content without permission</li>
           <li class="text-gray-700">• Product trademarks belong to their respective manufacturers</li>
           <li class="text-gray-700">• Unauthorized use may result in legal action</li>
+          <li class="text-gray-700">• You may not use our logo or branding without written consent</li>
         </ul>
       </div>
 
       <!-- Privacy & Data Protection -->
       <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">7. Privacy & Data Protection</h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">9. Privacy & Data Protection</h2>
         <p class="text-gray-700 mb-4">
           Your privacy is important to us. Our collection and use of personal information is governed by our Privacy 
           Policy and the Kenya Data Protection Act, 2019.
         </p>
         <ul class="space-y-2 ml-6">
-          <li class="text-gray-700">• We collect only necessary information for order processing</li>
+          <li class="text-gray-700">• We collect only necessary information for order processing and customer service</li>
           <li class="text-gray-700">• Your data is stored securely and not shared without consent</li>
           <li class="text-gray-700">• You have rights to access, correct, and delete your personal data</li>
+          <li class="text-gray-700">• We use cookies to improve your browsing experience</li>
           <li class="text-gray-700">• Contact us at +254 710 909 198 for data protection inquiries</li>
         </ul>
       </div>
 
       <!-- Governing Law - CRITICAL -->
-      <div class="bg-gradient-to-r from-green-600 to-green-700 text-white rounded-lg p-8 mb-8">
-        <h2 class="text-2xl font-bold mb-4">8. Governing Law & Jurisdiction</h2>
+      <div class="bg-gradient-to-r from-[#084c74] to-[#0a5d8a] text-white rounded-lg p-8 mb-8">
+        <h2 class="text-2xl font-bold mb-4">10. Governing Law & Jurisdiction</h2>
         
-        <h3 class="text-xl font-semibold mb-3 mt-6">8.1 Applicable Law</h3>
+        <h3 class="text-xl font-semibold mb-3 mt-6">10.1 Applicable Law</h3>
         <p class="mb-4">
           These Terms are governed by and construed in accordance with the laws of the Republic of Kenya, including but not limited to:
         </p>
@@ -230,17 +276,15 @@
           <li>• The Sale of Goods Act (Cap 31)</li>
           <li>• The Consumer Protection Act, 2012</li>
           <li>• The Data Protection Act, 2019</li>
-          <li>• Kenya Medical Supplies Authority (KEMSA) Regulations</li>
-          <li>• Pharmacy and Poisons Board Regulations</li>
         </ul>
 
-        <h3 class="text-xl font-semibold mb-3 mt-6">8.2 Jurisdiction</h3>
+        <h3 class="text-xl font-semibold mb-3 mt-6">10.2 Jurisdiction</h3>
         <p class="mb-4">
           Any disputes arising from these Terms or your use of our services shall be subject to the exclusive 
           jurisdiction of the courts of Kenya. You irrevocably submit to the jurisdiction of Kenyan courts.
         </p>
 
-        <h3 class="text-xl font-semibold mb-3 mt-6">8.3 Dispute Resolution</h3>
+        <h3 class="text-xl font-semibold mb-3 mt-6">10.3 Dispute Resolution</h3>
         <p class="mb-3">In the event of a dispute:</p>
         <ul class="space-y-2 ml-6">
           <li>• Contact us first at +254 710 909 198 to resolve the matter amicably</li>
@@ -251,30 +295,31 @@
 
       <!-- Indemnification -->
       <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">9. Indemnification</h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">11. Indemnification</h2>
         <p class="text-gray-700 mb-4">
-          You agree to indemnify and hold harmless Lorbhex Surgicals Ltd, its directors, officers, employees, and 
-          agents from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from:
+          You agree to indemnify and hold harmless Wabegadgets, its owners, employees, and agents from any 
+          claims, damages, losses, liabilities, and expenses (including legal fees) arising from:
         </p>
         <ul class="space-y-2 ml-6">
           <li class="text-gray-700">• Your use of our products or services</li>
           <li class="text-gray-700">• Your violation of these Terms</li>
           <li class="text-gray-700">• Your violation of any third-party rights</li>
-          <li class="text-gray-700">• Medical malpractice or improper use of products</li>
+          <li class="text-gray-700">• Improper use or installation of products</li>
           <li class="text-gray-700">• Any negligence or willful misconduct on your part</li>
         </ul>
       </div>
 
       <!-- Termination -->
       <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">10. Termination</h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">12. Termination</h2>
         <p class="text-gray-700 mb-4">
           We may terminate or suspend your access to our Website and services immediately, without prior notice, for:
         </p>
         <ul class="space-y-2 ml-6 mb-4">
           <li class="text-gray-700">• Breach of these Terms</li>
           <li class="text-gray-700">• Fraudulent or illegal activity</li>
-          <li class="text-gray-700">• Non-payment of outstanding invoices</li>
+          <li class="text-gray-700">• Providing false information</li>
+          <li class="text-gray-700">• Abusive behavior toward our staff</li>
           <li class="text-gray-700">• Any reason at our sole discretion</li>
         </ul>
         <p class="text-gray-700">
@@ -284,7 +329,7 @@
 
       <!-- Changes to Terms -->
       <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">11. Changes to Terms</h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">13. Changes to Terms</h2>
         <p class="text-gray-700 mb-4">
           We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting 
           to our Website. Your continued use of our services after changes constitutes acceptance of the modified Terms.
@@ -297,7 +342,7 @@
 
       <!-- Severability -->
       <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">12. Severability & Waiver</h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">14. Severability & Waiver</h2>
         <p class="text-gray-700 mb-4">
           If any provision of these Terms is found to be unenforceable or invalid under Kenyan law, that provision 
           shall be modified to reflect the parties' intention or eliminated to the minimum extent necessary, and the 
@@ -310,50 +355,37 @@
 
       <!-- Entire Agreement -->
       <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">13. Entire Agreement</h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">15. Entire Agreement</h2>
         <p class="text-gray-700">
-          These Terms, together with our Privacy Policy and Return Policy, constitute the entire agreement between 
-          you and Lorbhex Surgicals Ltd regarding your use of our Website and services, and supersede all prior 
-          agreements and understandings.
+          These Terms, together with our Privacy Policy, Return Policy, and Shipping Policy, constitute the entire 
+          agreement between you and Wabegadgets regarding your use of our Website and services, and supersede all 
+          prior agreements and understandings.
         </p>
       </div>
 
       <!-- Contact Information -->
-      <div class="bg-gradient-to-r from-gray-900 to-black text-white rounded-lg p-8">
-        <h2 class="text-2xl font-bold mb-4">14. Contact Information</h2>
+      <div class="bg-gradient-to-r from-[#084c74] to-[#0a5d8a] text-white rounded-lg p-8">
+        <h2 class="text-2xl font-bold mb-4">16. Contact Information</h2>
         <p class="mb-6">
           For questions about these Terms & Conditions, please contact us:
         </p>
         <div class="space-y-3">
-          <div class="flex items-start">
-            <svg class="w-5 h-5 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          <div class="flex items-center">
+            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
-            <div>
-              <p class="font-semibold">Phone:</p>
-              <a href="tel:+254710909198" class="hover:text-green-400">+254 710 909 198</a>
-            </div>
+            <a href="tel:+254710909198" class="hover:text-blue-200">+254 710 909 198</a>
           </div>
-          <div class="flex items-start">
-            <svg class="w-5 h-5 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+          <div class="flex items-center">
+            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
             </svg>
-            <div>
-              <p class="font-semibold">Website:</p>
-              <span>wabegadgets.co.ke</span>
-            </div>
-          </div>
-          <div class="flex items-start">
-            <svg class="w-5 h-5 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-            </svg>
-            <div>
-              <p class="font-semibold">Company:</p>
-              <span>Lorbhex Surgicals Ltd</span>
-              <p class="text-gray-400 text-sm mt-1">Registered in Kenya</p>
-            </div>
+            <span>wabegadgets.co.ke</span>
           </div>
         </div>
+        <p class="mt-6 text-sm text-blue-100">
+          Business Hours: Monday - Friday, 8:00 AM - 6:00 PM | Saturday, 9:00 AM - 3:00 PM
+        </p>
       </div>
 
       <!-- Legal Notice -->
@@ -365,7 +397,7 @@
           By using our Website or services, you acknowledge that you have read, understood, and agree to be bound by these Terms.
         </p>
         <p class="text-gray-500 text-xs mt-4">
-          Last Updated: December 15, 2025 | Lorbhex Surgicals Ltd © 2025
+          Last Updated: December 24, 2024 | Wabegadgets © 2024
         </p>
       </div>
 

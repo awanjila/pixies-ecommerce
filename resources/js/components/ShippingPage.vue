@@ -1,939 +1,368 @@
 <template>
-  <section class="shipping-section">
-    <div class="container">
-     
-      <div class="section-header">
-        <div class="header-badge">
-          <span class="badge-icon">🚚</span>
-          <span class="badge-text">Reliable Medical Logistics</span>
-        </div>
-        <h1 class="section-title">Shipping Information</h1>
-        <p class="section-subtitle">
-          Safe, compliant, and timely delivery of medical equipment across Kenya and worldwide
-        </p>
-      </div>
-
-      <div class="region-selector">
-        <button
-          v-for="region in shippingRegions"
-          :key="region.id"
-          @click="activeRegion = region.id"
-          :class="['region-btn', { active: activeRegion === region.id }]"
-        >
-          <span class="region-icon">{{ region.icon }}</span>
-          <span class="region-name">{{ region.name }}</span>
-        </button>
-      </div>
-
-    
-      <div class="region-details">
-        <div class="detail-cards">
-          <div class="detail-card timeline">
-            <div class="card-icon">⏱️</div>
-            <div class="card-label">Delivery Time</div>
-            <div class="card-value">{{ selectedRegion.timeline }}</div>
-          </div>
-          <div class="detail-card cost">
-            <div class="card-icon">💰</div>
-            <div class="card-label">Shipping Cost</div>
-            <div class="card-value">{{ selectedRegion.cost }}</div>
-          </div>
-          <div class="detail-card coverage">
-            <div class="card-icon">📍</div>
-            <div class="card-label">Coverage</div>
-            <div class="card-value">{{ selectedRegion.details }}</div>
-          </div>
-        </div>
-
-      
-        <div class="shipping-zones">
-          <h3 class="zones-title">
-            <span>📦</span> Detailed Shipping Zones
-          </h3>
-          <div class="zones-list">
-            <div v-for="(zone, idx) in selectedRegion.zones" :key="idx" class="zone-item">
-              <div class="zone-name">{{ zone.name }}</div>
-              <div class="zone-info">
-                <div class="zone-detail">
-                  <div class="detail-label">Delivery</div>
-                  <div class="detail-value delivery">{{ zone.days }} days</div>
-                </div>
-                <div class="zone-detail">
-                  <div class="detail-label">Cost</div>
-                  <div class="detail-value cost">{{ zone.cost }}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-     
-      <div class="courier-section">
-        <h2 class="courier-title">Our Trusted Courier Partners</h2>
-        <div class="courier-grid">
-          <div
-            v-for="(courier, idx) in courierPartners"
-            :key="idx"
-            class="courier-card"
-            :style="{ animationDelay: `${idx * 0.1}s` }"
-          >
-            <div class="courier-logo">{{ courier.logo }}</div>
-            <h3 class="courier-name">{{ courier.name }}</h3>
-            <div class="courier-badges">
-              <span class="courier-badge">{{ courier.speed }}</span>
-            </div>
-            <div class="courier-regions">{{ courier.regions.join(', ') }}</div>
-          </div>
-        </div>
-      </div>
-
-     
-      <div class="special-handling">
-        <div class="handling-header">
-          <div class="handling-badge">
-            <span>⚕️</span>
-            <span>Medical Compliance</span>
-          </div>
-          <h2 class="handling-title">Items Requiring Special Handling</h2>
-          <p class="handling-subtitle">Professional logistics for sensitive medical supplies</p>
-        </div>
-        <div class="handling-grid">
-          <div
-            v-for="(item, idx) in specialHandling"
-            :key="idx"
-            class="handling-card"
-            :style="{ animationDelay: `${idx * 0.1}s` }"
-          >
-            <div class="handling-content">
-              <div class="handling-icon">{{ item.icon }}</div>
-              <div class="handling-info">
-                <h3 class="handling-item-title">{{ item.title }}</h3>
-                <p class="handling-description">{{ item.description }}</p>
-                <div class="handling-note">
-                  <span class="note-icon">⚠️</span>
-                  <span class="note-text">{{ item.note }}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-   
-      <div class="faq-section">
-        <h2 class="faq-title">Frequently Asked Questions</h2>
-        <div class="faq-list">
-          <div v-for="(faq, idx) in faqs" :key="idx" class="faq-item">
-            <button
-              @click="toggleFAQ(idx)"
-              class="faq-question"
-            >
-              <span class="question-text">{{ faq.question }}</span>
-              <span :class="['question-icon', { expanded: expandedFAQ === idx }]">⌄</span>
-            </button>
-            <div :class="['faq-answer', { expanded: expandedFAQ === idx }]">
-              <div class="answer-text">{{ faq.answer }}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-     
-      <div class="contact-cta">
-        <h2 class="cta-title">Need Custom Shipping Solutions?</h2>
-        <p class="cta-subtitle">
-          Large orders, specialized equipment, or urgent deliveries? Our logistics team is here to help.
-        </p>
-        <div class="cta-buttons">
-          <a href="tel:+254710909198" class="cta-btn primary">
-            📞 Call: +254 710 909 198
-          </a>
-          <a href="mailto:shipping@medical.com" class="cta-btn secondary">
-            ✉️ Email: shipping@wabegadgets.co.ke
-          </a>
-        </div>
+  <div class="min-h-screen bg-gray-50">
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-[#084c74] to-[#0a5d8a] text-white py-16 px-4">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl font-bold mb-4">Shipping & Delivery Policy</h1>
+        <p class="text-blue-50 text-lg">Wabegadgets - Fast, Reliable Technology Delivery</p>
       </div>
     </div>
-  </section>
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-4 py-12">
+      
+      <!-- Introduction -->
+      <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+        <p class="text-gray-700 leading-relaxed">
+          At Wabegadgets, we are committed to delivering your technology products safely and on time. 
+          We work with trusted courier partners across Kenya to ensure your gadgets and electronics 
+          reach you in perfect condition.
+        </p>
+      </div>
+
+      <!-- Shipping Zones -->
+      <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+        <div class="flex items-start mb-6">
+          <div class="bg-[#084c74]/10 rounded-full p-3 mr-4">
+            <svg class="w-6 h-6 text-[#084c74]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+            </svg>
+          </div>
+          <div class="flex-1">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Delivery Zones & Timelines</h2>
+            
+            <!-- Zone Cards -->
+            <div class="space-y-4">
+              <div class="border-2 border-[#084c74]/20 rounded-lg p-4 hover:border-[#084c74] transition-colors">
+                <div class="flex justify-between items-start mb-2">
+                  <div>
+                    <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+                      <span>🏙️</span> Nairobi & Surroundings
+                    </h3>
+                    <p class="text-sm text-gray-600 mt-1">CBD, Westlands, Kilimani, Karen, Lavington, Parklands</p>
+                  </div>
+                  <div class="text-right">
+                    <div class="text-[#084c74] font-bold">KES 300</div>
+                    <div class="text-sm text-gray-600">24 Hours</div>
+                  </div>
+                </div>
+                <div class="bg-blue-50 border-l-4 border-[#084c74] p-3 mt-3">
+                  <p class="text-sm text-[#084c74] font-semibold">✓ Same-day delivery available for orders placed before 2 PM</p>
+                </div>
+              </div>
+
+              <div class="border-2 border-gray-200 rounded-lg p-4 hover:border-[#084c74] transition-colors">
+                <div class="flex justify-between items-start mb-2">
+                  <div>
+                    <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+                      <span>🌆</span> Major Cities
+                    </h3>
+                    <p class="text-sm text-gray-600 mt-1">Mombasa, Kisumu, Nakuru, Eldoret, Thika, Machakos</p>
+                  </div>
+                  <div class="text-right">
+                    <div class="text-[#084c74] font-bold">KES 500</div>
+                    <div class="text-sm text-gray-600">2-3 Days</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="border-2 border-gray-200 rounded-lg p-4 hover:border-[#084c74] transition-colors">
+                <div class="flex justify-between items-start mb-2">
+                  <div>
+                    <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+                      <span>📍</span> Remote Areas
+                    </h3>
+                    <p class="text-sm text-gray-600 mt-1">Outlying counties and rural locations</p>
+                  </div>
+                  <div class="text-right">
+                    <div class="text-[#084c74] font-bold">KES 1,500</div>
+                    <div class="text-sm text-gray-600">3-5 Days</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Free Shipping Banner -->
+            <div class="bg-gradient-to-r from-green-50 to-blue-50 border-2 border-green-200 rounded-lg p-4 mt-6">
+              <div class="flex items-center gap-3">
+                <div class="text-3xl">🎁</div>
+                <div>
+                  <p class="font-bold text-gray-900">Free Shipping Available!</p>
+                  <p class="text-sm text-gray-700">Enjoy free delivery on all orders over <span class="font-bold text-[#084c74]">KES 10,000</span> within Kenya</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Courier Partners -->
+      <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Our Trusted Courier Partners</h2>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="border border-gray-200 rounded-lg p-4 text-center hover:border-[#084c74] transition-colors">
+            <div class="text-4xl mb-2">🚚</div>
+            <h3 class="font-bold text-gray-900">G4S Courier</h3>
+            <p class="text-sm text-gray-600 mt-1">Express & Standard</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4 text-center hover:border-[#084c74] transition-colors">
+            <div class="text-4xl mb-2">📦</div>
+            <h3 class="font-bold text-gray-900">Fargo Courier</h3>
+            <p class="text-sm text-gray-600 mt-1">Economy Shipping</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4 text-center hover:border-[#084c74] transition-colors">
+            <div class="text-4xl mb-2">✈️</div>
+            <h3 class="font-bold text-gray-900">DHL Kenya</h3>
+            <p class="text-sm text-gray-600 mt-1">Premium Express</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- How Shipping Works -->
+      <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">How Our Shipping Works</h2>
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <div class="bg-[#084c74] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">1</div>
+            <div>
+              <h3 class="font-semibold text-gray-900 mb-1">Order Processing</h3>
+              <p class="text-gray-700">Orders are processed within 24 hours on business days. You'll receive an order confirmation email immediately after purchase.</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="bg-[#084c74] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">2</div>
+            <div>
+              <h3 class="font-semibold text-gray-900 mb-1">Quality Check & Packaging</h3>
+              <p class="text-gray-700">Every item is inspected for quality and carefully packaged with protective materials to ensure safe transit.</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="bg-[#084c74] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">3</div>
+            <div>
+              <h3 class="font-semibold text-gray-900 mb-1">Dispatch & Tracking</h3>
+              <p class="text-gray-700">Once shipped, you'll receive a tracking number via SMS and email to monitor your delivery in real-time.</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="bg-[#084c74] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">4</div>
+            <div>
+              <h3 class="font-semibold text-gray-900 mb-1">Delivery & Confirmation</h3>
+              <p class="text-gray-700">Our courier will contact you before delivery. Please inspect your package immediately upon receipt.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Special Handling -->
+      <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+        <div class="flex items-start mb-4">
+          <div class="bg-[#084c74]/10 rounded-full p-3 mr-4">
+            <svg class="w-6 h-6 text-[#084c74]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          </div>
+          <div class="flex-1">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Special Handling for Electronics</h2>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="text-[#084c74] mr-2 mt-1">•</span>
+                <div>
+                  <span class="font-semibold text-gray-900">Fragile Items:</span>
+                  <span class="text-gray-700"> All electronics are packaged with bubble wrap and cushioning materials</span>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#084c74] mr-2 mt-1">•</span>
+                <div>
+                  <span class="font-semibold text-gray-900">Large Items:</span>
+                  <span class="text-gray-700"> TVs, monitors, and large appliances may require additional handling time and fees</span>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#084c74] mr-2 mt-1">•</span>
+                <div>
+                  <span class="font-semibold text-gray-900">High-Value Items:</span>
+                  <span class="text-gray-700"> Orders over KES 50,000 may require signature confirmation</span>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#084c74] mr-2 mt-1">•</span>
+                <div>
+                  <span class="font-semibold text-gray-900">Installation Services:</span>
+                  <span class="text-gray-700"> Available for TVs, CCTV systems, and networking equipment (additional charges apply)</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Order Tracking -->
+      <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-[#084c74]/30 rounded-lg p-8 mb-8">
+        <div class="flex items-start gap-4">
+          <div class="text-4xl">📱</div>
+          <div class="flex-1">
+            <h2 class="text-2xl font-bold text-gray-900 mb-3">Track Your Order</h2>
+            <p class="text-gray-700 mb-4">
+              Stay updated on your delivery status with real-time tracking:
+            </p>
+            <ul class="space-y-2 text-gray-700">
+              <li>✓ SMS notifications at each delivery milestone</li>
+              <li>✓ Email updates with tracking links</li>
+              <li>✓ Live tracking through courier website</li>
+              <li>✓ Direct contact with delivery personnel</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delivery Issues -->
+      <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Delivery Issues & Solutions</h2>
+        <div class="space-y-4">
+          <div class="border-l-4 border-yellow-400 bg-yellow-50 p-4">
+            <h3 class="font-bold text-gray-900 mb-1">📦 Package Not Received</h3>
+            <p class="text-gray-700 text-sm">Contact us immediately at <a href="tel:+254710909198" class="text-[#084c74] font-semibold hover:underline">+254 710 909 198</a>. We'll work with the courier to locate your package.</p>
+          </div>
+          <div class="border-l-4 border-red-400 bg-red-50 p-4">
+            <h3 class="font-bold text-gray-900 mb-1">📋 Damaged on Arrival</h3>
+            <p class="text-gray-700 text-sm">Inspect your package before accepting. If damaged, take photos and refuse delivery or note the damage with the courier. Contact us within 48 hours for replacement.</p>
+          </div>
+          <div class="border-l-4 border-blue-400 bg-blue-50 p-4">
+            <h3 class="font-bold text-gray-900 mb-1">❌ Wrong Item Delivered</h3>
+            <p class="text-gray-700 text-sm">Don't open the package. Contact us immediately for a return authorization and we'll arrange pickup and correct delivery at no extra cost.</p>
+          </div>
+          <div class="border-l-4 border-green-400 bg-green-50 p-4">
+            <h3 class="font-bold text-gray-900 mb-1">⏰ Delivery Delays</h3>
+            <p class="text-gray-700 text-sm">Check your tracking number for updates. If delivery exceeds the estimated timeframe, contact us and we'll investigate with the courier.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-3">
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button 
+              @click="expandedFAQ = expandedFAQ === 0 ? null : 0"
+              class="w-full flex justify-between items-center p-4 text-left hover:bg-gray-50 transition-colors"
+            >
+              <span class="font-semibold text-gray-900">How are shipping costs calculated?</span>
+              <span class="text-[#084c74] text-xl">{{ expandedFAQ === 0 ? '−' : '+' }}</span>
+            </button>
+            <div v-show="expandedFAQ === 0" class="px-4 pb-4 text-gray-700 border-t border-gray-100">
+              <p class="pt-3">Shipping costs are based on your delivery location and package weight. Nairobi deliveries start at KES 300, major cities at KES 500, and remote areas at KES 1,500. You'll see the exact shipping cost at checkout before completing your purchase.</p>
+            </div>
+          </div>
+
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button 
+              @click="expandedFAQ = expandedFAQ === 1 ? null : 1"
+              class="w-full flex justify-between items-center p-4 text-left hover:bg-gray-50 transition-colors"
+            >
+              <span class="font-semibold text-gray-900">Do you offer free shipping?</span>
+              <span class="text-[#084c74] text-xl">{{ expandedFAQ === 1 ? '−' : '+' }}</span>
+            </button>
+            <div v-show="expandedFAQ === 1" class="px-4 pb-4 text-gray-700 border-t border-gray-100">
+              <p class="pt-3">Yes! We offer free shipping on all orders over KES 10,000 within Kenya. This applies to all delivery zones including Nairobi, major cities, and remote areas.</p>
+            </div>
+          </div>
+
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button 
+              @click="expandedFAQ = expandedFAQ === 2 ? null : 2"
+              class="w-full flex justify-between items-center p-4 text-left hover:bg-gray-50 transition-colors"
+            >
+              <span class="font-semibold text-gray-900">Can I change my delivery address after ordering?</span>
+              <span class="text-[#084c74] text-xl">{{ expandedFAQ === 2 ? '−' : '+' }}</span>
+            </button>
+            <div v-show="expandedFAQ === 2" class="px-4 pb-4 text-gray-700 border-t border-gray-100">
+              <p class="pt-3">Address changes are possible before dispatch. Contact us immediately at +254 710 909 198. Once the package is dispatched, address changes may incur additional fees or require package redirection through the courier.</p>
+            </div>
+          </div>
+
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button 
+              @click="expandedFAQ = expandedFAQ === 3 ? null : 3"
+              class="w-full flex justify-between items-center p-4 text-left hover:bg-gray-50 transition-colors"
+            >
+              <span class="font-semibold text-gray-900">Do you ship on weekends?</span>
+              <span class="text-[#084c74] text-xl">{{ expandedFAQ === 3 ? '−' : '+' }}</span>
+            </button>
+            <div v-show="expandedFAQ === 3" class="px-4 pb-4 text-gray-700 border-t border-gray-100">
+              <p class="pt-3">Orders placed on weekends are processed on the next business day (Monday). However, we offer Saturday deliveries in Nairobi for orders placed before Friday 2 PM. Sunday deliveries are not available.</p>
+            </div>
+          </div>
+
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button 
+              @click="expandedFAQ = expandedFAQ === 4 ? null : 4"
+              class="w-full flex justify-between items-center p-4 text-left hover:bg-gray-50 transition-colors"
+            >
+              <span class="font-semibold text-gray-900">What if I'm not available to receive my delivery?</span>
+              <span class="text-[#084c74] text-xl">{{ expandedFAQ === 4 ? '−' : '+' }}</span>
+            </button>
+            <div v-show="expandedFAQ === 4" class="px-4 pb-4 text-gray-700 border-t border-gray-100">
+              <p class="pt-3">The courier will contact you before delivery to arrange a convenient time. If you're unavailable, you can authorize someone else to receive the package on your behalf. Alternative delivery dates can also be arranged through the courier.</p>
+            </div>
+          </div>
+
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button 
+              @click="expandedFAQ = expandedFAQ === 5 ? null : 5"
+              class="w-full flex justify-between items-center p-4 text-left hover:bg-gray-50 transition-colors"
+            >
+              <span class="font-semibold text-gray-900">Are all items insured during shipping?</span>
+              <span class="text-[#084c74] text-xl">{{ expandedFAQ === 5 ? '−' : '+' }}</span>
+            </button>
+            <div v-show="expandedFAQ === 5" class="px-4 pb-4 text-gray-700 border-t border-gray-100">
+              <p class="pt-3">Yes, all shipments are insured for their full value. In the rare event of damage or loss during transit, we'll process a replacement or full refund at no cost to you. Always inspect packages before accepting delivery.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="bg-gradient-to-r from-[#084c74] to-[#0a5d8a] text-white rounded-lg p-8">
+        <h2 class="text-2xl font-bold mb-4">Questions About Shipping?</h2>
+        <p class="mb-6">Our customer service team is ready to assist you with any delivery inquiries.</p>
+        <div class="space-y-3">
+          <div class="flex items-center">
+            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <a href="tel:+254710909198" class="hover:text-blue-200">+254 710 909 198</a>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+            </svg>
+            <span>wabegadgets.co.ke</span>
+          </div>
+        </div>
+        <p class="mt-6 text-sm text-blue-100">
+          Business Hours: Monday - Friday, 8:00 AM - 6:00 PM | Saturday, 9:00 AM - 3:00 PM
+        </p>
+      </div>
+
+      <!-- Footer Note -->
+      <div class="mt-8 text-center text-gray-600 text-sm">
+        <p>Last Updated: December 2025</p>
+        <p class="mt-2">Wabegadgets reserves the right to update this policy. Changes will be communicated on our website.</p>
+      </div>
+
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'ShippingInformation',
+  name: 'ShippingPolicy',
   data() {
     return {
-      activeRegion: 'kenya',
-      expandedFAQ: null,
-      shippingRegions: [
-        {
-          id: 'kenya',
-          name: 'Kenya',
-          icon: '🇰🇪',
-          timeline: '1-3 Business Days',
-          cost: 'Ksh 300 - 1,500',
-          details: 'Free shipping on orders over Ksh 10,000',
-          zones: [
-            { name: 'Nairobi & Surroundings', days: '1-2', cost: 'Ksh 300' },
-            { name: 'Major Cities (Mombasa, Kisumu, Nakuru)', days: '2-3', cost: 'Ksh 500' },
-            { name: 'Remote Areas', days: '3-5', cost: 'Ksh 1,500' }
-          ]
-        },
-        {
-          id: 'eastafrica',
-          name: 'East Africa',
-          icon: '🌍',
-          timeline: '5-10 Business Days',
-          cost: 'Calculated at checkout',
-          details: 'Uganda, Tanzania, Rwanda, Burundi',
-          zones: [
-            { name: 'Uganda & Tanzania', days: '5-7', cost: 'From Ksh 3,000' },
-            { name: 'Rwanda & Burundi', days: '7-10', cost: 'From Ksh 4,500' }
-          ]
-        },
-        {
-          id: 'international',
-          name: 'International',
-          icon: '✈️',
-          timeline: '10-21 Business Days',
-          cost: 'Calculated at checkout',
-          details: 'Worldwide shipping available',
-          zones: [
-            { name: 'Europe & North America', days: '10-15', cost: 'From USD 50' },
-            { name: 'Asia & Middle East', days: '12-18', cost: 'From USD 40' },
-            { name: 'Rest of World', days: '15-21', cost: 'Contact us for quote' }
-          ]
-        }
-      ],
-      courierPartners: [
-        { name: 'DHL Express', logo: '📦', speed: 'Express', regions: ['Kenya', 'International'] },
-        { name: 'G4S Courier', logo: '🚚', speed: 'Standard', regions: ['Kenya', 'East Africa'] },
-        { name: 'Fargo Courier', logo: '🏪', speed: 'Economy', regions: ['Kenya'] },
-        { name: 'FedEx', logo: '✈️', speed: 'Express', regions: ['International'] }
-      ],
-      specialHandling: [
-        {
-          icon: '❄️',
-          title: 'Temperature-Sensitive Items',
-          description: 'Vaccines, medications, and biological samples require cold chain logistics',
-          note: '2-4°C or -20°C storage during transit'
-        },
-        {
-          icon: '⚠️',
-          title: 'Fragile Medical Equipment',
-          description: 'Imaging equipment, diagnostic tools, and glass instruments',
-          note: 'Custom crating and shock-proof packaging'
-        },
-        {
-          icon: '📋',
-          title: 'Regulated Medical Devices',
-          description: 'Items requiring permits, licenses, or compliance documentation',
-          note: 'Additional 3-5 days for customs clearance'
-        },
-        {
-          icon: '🔒',
-          title: 'Controlled Substances',
-          description: 'Scheduled drugs and controlled medical supplies',
-          note: 'Requires valid prescription and documentation'
-        }
-      ],
-      faqs: [
-        {
-          question: 'How are shipping costs calculated?',
-          answer: 'Shipping costs are based on package weight, dimensions, destination, and delivery speed. You\'ll see the exact cost at checkout before confirming your order. We offer free shipping within Kenya for orders over Ksh 10,000.'
-        },
-        {
-          question: 'Do you ship hazardous medical materials?',
-          answer: 'Yes, but with strict compliance. We handle WHO Class A and B biological substances, following IATA regulations. Additional documentation and specialized packaging are required. Contact our compliance team for specific items.'
-        },
-        {
-          question: 'Can I track my medical equipment shipment?',
-          answer: 'Absolutely! Once your order ships, you\'ll receive a tracking number via email and SMS. Track in real-time through our website or the courier\'s platform. Temperature-sensitive shipments include data loggers for monitoring.'
-        },
-        {
-          question: 'What if my equipment arrives damaged?',
-          answer: 'All shipments are insured. If damage occurs, photograph the package and contact us within 48 hours. We\'ll arrange inspection, replacement, or repair at no cost to you. Our packaging is designed to withstand standard handling.'
-        },
-        {
-          question: 'Do you offer installation services?',
-          answer: 'Yes! For large medical equipment (imaging systems, surgical tables, etc.), we provide professional installation, calibration, and staff training. This is included in the delivery cost for qualifying items.'
-        }
-      ]
+      expandedFAQ: null
     };
-  },
-  computed: {
-    selectedRegion() {
-      return this.shippingRegions.find(r => r.id === this.activeRegion);
-    }
-  },
-  methods: {
-    toggleFAQ(idx) {
-      this.expandedFAQ = this.expandedFAQ === idx ? null : idx;
-    }
   }
 };
 </script>
-
-<style scoped>
-.shipping-section {
-  min-height: 100vh;
-  background: linear-gradient(to bottom, #f9fafb 0%, #ffffff 100%);
-  padding: 80px 0;
-}
-
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-/* Header */
-.section-header {
-  text-align: center;
-  margin-bottom: 64px;
-  animation: fadeInDown 0.6s ease-out;
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.header-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  background: linear-gradient(135deg, rgba(10, 154, 115, 0.1) 0%, rgba(6, 64, 43, 0.1) 100%);
-  border: 1px solid rgba(10, 154, 115, 0.2);
-  border-radius: 50px;
-  margin-bottom: 16px;
-}
-
-.badge-icon {
-  font-size: 1.5rem;
-}
-
-.badge-text {
-  color: #0a609d;
-  font-weight: 600;
-  font-size: 0.875rem;
-}
-
-.section-title {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #084c74;
-  margin: 0 0 16px 0;
-  letter-spacing: -0.02em;
-}
-
-.section-subtitle {
-  color: #6b7280;
-  font-size: 1.25rem;
-  margin: 0;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Region Selector */
-.region-selector {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
-  margin-bottom: 48px;
-}
-
-.region-btn {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 32px;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 1.125rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background: white;
-  color: #374151;
-  border: 2px solid #e5e7eb;
-  cursor: pointer;
-}
-
-.region-btn:hover {
-  border-color: #0a609d;
-  background: #f0fdf4;
-}
-
-.region-btn.active {
-  background: linear-gradient(135deg, #0a609d 0%, #084c74 100%);
-  color: white;
-  border-color: transparent;
-  box-shadow: 0 8px 20px rgba(10, 154, 115, 0.3);
-  transform: scale(1.05);
-}
-
-.region-icon {
-  font-size: 1.875rem;
-}
-
-.region-name {
-  font-weight: 600;
-}
-
-/* Region Details */
-.region-details {
-  background: white;
-  border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e5e7eb;
-  padding: 32px;
-  margin-bottom: 48px;
-  animation: slideUp 0.6s ease-out;
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.detail-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
-  margin-bottom: 32px;
-}
-
-.detail-card {
-  text-align: center;
-  padding: 24px;
-  border-radius: 16px;
-  transition: transform 0.3s ease;
-}
-
-.detail-card:hover {
-  transform: translateY(-4px);
-}
-
-.detail-card.timeline {
-  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
-}
-
-.detail-card.cost {
-  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-}
-
-.detail-card.coverage {
-  background: linear-gradient(135deg, #fae8ff 0%, #f3e8ff 100%);
-}
-
-.card-icon {
-  font-size: 2.5rem;
-  margin-bottom: 12px;
-}
-
-.card-label {
-  font-size: 0.875rem;
-  color: #6b7280;
-  font-weight: 500;
-  margin-bottom: 8px;
-}
-
-.card-value {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #084c74;
-}
-
-/* Shipping Zones */
-.shipping-zones {
-  background: #f9fafb;
-  border-radius: 16px;
-  padding: 24px;
-}
-
-.zones-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #111827;
-  margin: 0 0 16px 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.zones-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.zone-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
-  background: white;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-  transition: all 0.3s ease;
-}
-
-.zone-item:hover {
-  border-color: #0a609d;
-  box-shadow: 0 4px 12px rgba(10, 154, 115, 0.1);
-}
-
-.zone-name {
-  font-weight: 600;
-  color: #111827;
-  flex: 1;
-}
-
-.zone-info {
-  display: flex;
-  gap: 24px;
-}
-
-.zone-detail {
-  text-align: right;
-}
-
-.detail-label {
-  font-size: 0.75rem;
-  color: #6b7280;
-  margin-bottom: 4px;
-}
-
-.detail-value {
-  font-weight: 700;
-}
-
-.detail-value.delivery {
-  color: #0a609d;
-}
-
-.detail-value.cost {
-  color: #111827;
-}
-
-/* Courier Section */
-.courier-section {
-  margin-bottom: 64px;
-}
-
-.courier-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #084c74;
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-.courier-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
-}
-
-.courier-card {
-  background: white;
-  border-radius: 16px;
-  padding: 24px;
-  border: 1px solid #e5e7eb;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: fadeIn 0.6s ease-out;
-  animation-fill-mode: both;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.courier-card:hover {
-  border-color: #0a609d;
-  box-shadow: 0 12px 24px rgba(10, 154, 115, 0.15);
-  transform: translateY(-8px);
-}
-
-.courier-logo {
-  font-size: 3rem;
-  text-align: center;
-  margin-bottom: 16px;
-}
-
-.courier-name {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #111827;
-  text-align: center;
-  margin: 0 0 12px 0;
-}
-
-.courier-badges {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-
-.courier-badge {
-  padding: 6px 16px;
-  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
-  color: #0a609d;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 600;
-}
-
-.courier-regions {
-  font-size: 0.875rem;
-  color: #6b7280;
-  text-align: center;
-}
-
-/* Special Handling */
-.special-handling {
-  margin-bottom: 64px;
-}
-
-.handling-header {
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-.handling-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 20px;
-  background: #fff7ed;
-  color: #c2410c;
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 0.875rem;
-  margin-bottom: 16px;
-}
-
-.handling-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #084c74;
-  margin: 0 0 8px 0;
-}
-
-.handling-subtitle {
-  color: #6b7280;
-  font-size: 1rem;
-  margin: 0;
-}
-
-.handling-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 24px;
-}
-
-.handling-card {
-  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
-  border-radius: 16px;
-  padding: 24px;
-  border: 2px solid #e5e7eb;
-  transition: all 0.4s ease;
-  animation: slideUp 0.6s ease-out;
-  animation-fill-mode: both;
-}
-
-.handling-card:hover {
-  border-color: #0a609d;
-  box-shadow: 0 8px 20px rgba(10, 154, 115, 0.1);
-}
-
-.handling-content {
-  display: flex;
-  gap: 16px;
-}
-
-.handling-icon {
-  font-size: 3rem;
-  flex-shrink: 0;
-}
-
-.handling-info {
-  flex: 1;
-}
-
-.handling-item-title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #111827;
-  margin: 0 0 8px 0;
-}
-
-.handling-description {
-  color: #6b7280;
-  margin: 0 0 12px 0;
-  line-height: 1.6;
-}
-
-.handling-note {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 12px;
-  background: #fef3c7;
-  border: 1px solid #fbbf24;
-  border-radius: 8px;
-  font-size: 0.875rem;
-}
-
-.note-icon {
-  color: #d97706;
-}
-
-.note-text {
-  color: #92400e;
-  font-weight: 500;
-}
-
-/* FAQ Section */
-.faq-section {
-  margin-bottom: 64px;
-}
-
-.faq-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #084c74;
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-.faq-list {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.faq-item {
-  background: white;
-  border-radius: 16px;
-  border: 1px solid #e5e7eb;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.faq-item:hover {
-  border-color: #0a609d;
-}
-
-.faq-question {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 24px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  text-align: left;
-}
-
-.faq-question:hover {
-  background: #f9fafb;
-}
-
-.question-text {
-  font-weight: 600;
-  color: #111827;
-  font-size: 1.125rem;
-  padding-right: 16px;
-}
-
-.question-icon {
-  font-size: 1.5rem;
-  color: #0a609d;
-  transition: transform 0.3s ease;
-  flex-shrink: 0;
-}
-
-.question-icon.expanded {
-  transform: rotate(180deg);
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.faq-answer.expanded {
-  max-height: 500px;
-}
-
-.answer-text {
-  padding: 0 24px 24px;
-  color: #6b7280;
-  line-height: 1.7;
-  border-top: 1px solid #f3f4f6;
-  padding-top: 16px;
-  margin: 0 24px 24px;
-}
-
-/* Contact CTA */
-.contact-cta {
-  background: linear-gradient(135deg, #0a609d 0%, #084c74 100%);
-  border-radius: 24px;
-  padding: 48px 32px;
-  text-align: center;
-  color: white;
-  box-shadow: 0 20px 40px rgba(10, 154, 115, 0.3);
-}
-
-.cta-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin: 0 0 16px 0;
-}
-
-.cta-subtitle {
-  font-size: 1.25rem;
-  margin: 0 0 32px 0;
-  color: #d1fae5;
-}
-
-.cta-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
-}
-
-.cta-btn {
-  padding: 16px 32px;
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 1.125rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.cta-btn.primary {
-  background: white;
-  color: #0a609d;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.cta-btn.primary:hover {
-  background: #f0fdf4;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.cta-btn.secondary {
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
-  border: 2px solid white;
-}
-
-.cta-btn.secondary:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateY(-2px);
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .handling-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .shipping-section {
-    padding: 60px 0;
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .section-subtitle {
-    font-size: 1rem;
-  }
-
-  .region-selector {
-    flex-direction: column;
-  }
-
-  .region-btn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .detail-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .zone-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .zone-info {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .courier-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cta-title {
-    font-size: 1.75rem;
-  }
-
-  .cta-subtitle {
-    font-size: 1rem;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-  }
-
-  .cta-btn {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 0 16px;
-  }
-
-  .section-header {
-    margin-bottom: 48px;
-  }
-}
-</style>
