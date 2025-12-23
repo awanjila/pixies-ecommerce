@@ -61,7 +61,7 @@ class ProductController extends Controller
         $save_url='upload/products/'.$name_gen;
 
        // dd($save_url);
-        $pcode = IdGenerator::generate(['table' => 'products', 'field'=> 'product_code', 'length' => 6, 'prefix'=> 'LORB']);
+        $pcode = IdGenerator::generate(['table' => 'products', 'field'=> 'product_code', 'length' => 6, 'prefix'=> 'WABE-']);
 
         // $selling_price = $request->buying_price * 1.40;
 $slug = Str::slug($request->product_name); // Generate slug from the product name
