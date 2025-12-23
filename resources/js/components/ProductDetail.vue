@@ -240,7 +240,7 @@
               <i class="fas fa-star"></i>
               You May Also Like
             </h3>
-            <p class="section-subtitle">Similar medical equipment and supplies</p>
+            <p class="section-subtitle">Customers also bought</p>
           </div>
           
           <div class="carousel-container">

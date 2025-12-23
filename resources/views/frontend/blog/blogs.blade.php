@@ -44,7 +44,7 @@ wabegadgets | Electronics, Security & Smart Devices in Nairobi Kenya
                                         <a href="#"><i class="far fa-user"></i>by: {{$item->author}}S</a>
                                     </li>
                                     <li class="ltn__blog-tags">
-                                        <a href="#"><i class="fas fa-tags"></i>Medical Equipments</a>
+                                        <a href="#"><i class="fas fa-tags"></i>Electronics, Smart Devices & Security Systems</a>
                                     </li>
                                 </ul>
                             </div>
