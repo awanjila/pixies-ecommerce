@@ -7,7 +7,7 @@
           <div class="breadcrumb-header">
             <span class="product-badge">
               <i class="fas fa-heartbeat"></i>
-              Medical Equipment
+              Electronics, Security & Smart Devices
             </span>
             <h1 class="page-title">{{ product.product_name }}</h1>
           </div>
@@ -31,10 +31,7 @@
         <div class="product-details-grid">
           <!-- Product Images -->
           <div class="product-images">
-            <div class="image-badge">
-              <i class="fas fa-shield-check"></i>
-              Certified Medical Grade
-            </div>
+            
             <div class="main-image" @click="openImageModal">
               <img 
                 :src="getImageUrl(currentMainImage)" 

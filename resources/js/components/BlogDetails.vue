@@ -29,7 +29,7 @@
                             <div class="ltn__blog-meta">
                                 <ul>
                                     <li class="ltn__blog-category">
-                                        <a href="#">Dealers in Medical Supplies & Equipments</a>
+                                        <a href="#">Dealers in Electronics, Security & Smart Devices</a>
                                     </li>
                                 </ul>
                             </div>

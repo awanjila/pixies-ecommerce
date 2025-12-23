@@ -1,10 +1,10 @@
 @extends('layouts.front_app')
 
 @section('title')
-Login | wabegadgets | Surgical Instruments & Medical Supplies
+Login | wabegadgets | Electronics, Security & Smart Devices
 @endsection
 
-@section('meta_title', 'Our Products · Surgical Instruments & Medical Supplies in Nairobi Kenya.')      
+@section('meta_title', 'Our Products · Electronics, Security & Smart Devices in Nairobi Kenya.')      
 
 @section('content')
 <main>

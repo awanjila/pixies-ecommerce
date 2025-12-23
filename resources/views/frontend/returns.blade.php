@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
-@section('title', 'Returns | wabegadgets | Surgical Instruments & Medical Supplies in Nairobi Kenya')
+@section('title', 'Returns | wabegadgets | Electronics, Security & Smart Devices in Nairobi Kenya')
 
-@section('meta_title', 'Returns wabegadgets | Surgical Instruments & Medical Supplies in Nairobi Kenya - Your Security Solutions Partner')
+@section('meta_title', 'Returns wabegadgets | Electronics, Security & Smart Devices in Nairobi Kenya - Your Security Solutions Partner')
 @section('content')
 
 

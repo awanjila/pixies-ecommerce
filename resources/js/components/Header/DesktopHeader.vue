@@ -19,7 +19,6 @@
                     <div class="top-bar-right">
                         <div class="trust-badge">
                             <i class="fas fa-shield-check"></i>
-                            <span>ISO Certified Medical Equipment</span>
                         </div>
                         <div class="social-icons">
                             <a href="#" class="social-link facebook" title="Facebook">

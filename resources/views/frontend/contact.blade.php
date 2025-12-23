@@ -1,8 +1,8 @@
 @extends('layouts.front_app')
 
-@section('title', 'Contact Us | wabegadgets | Surgical Instruments & Medical Supplies in Nairobi Kenya')
+@section('title', 'Contact Us | wabegadgets | Electronics, Security & Smart Devices in Nairobi Kenya')
 
-@section('meta_title', 'Contact wabegadgets | Surgical Instruments & Medical Supplies in Nairobi Kenya - Your Security Solutions Partner')
+@section('meta_title', 'Contact wabegadgets | Electronics, Security & Smart Devices in Nairobi Kenya - Your Security Solutions Partner')
 
 @section('content')
 <div class="ltn__breadcrumb-area text-left bg-overlay-white-30 bg-image" data-bs-bg="img/bg/14.jpg">

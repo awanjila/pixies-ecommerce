@@ -2,8 +2,8 @@
   <div class="category-menu">
     <div class="menu-header">
       <h3 class="menu-title">
-        <span class="title-icon">🏥</span>
-        Medical Categories
+        
+        Categories
       </h3>
     </div>
     <ul class="category-list">

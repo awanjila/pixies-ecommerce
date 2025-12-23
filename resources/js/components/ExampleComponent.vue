@@ -3,7 +3,7 @@
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">Electronics, Security & Smart Devices </h2>
-        <p class="section-subtitle">Explore our comprehensive range of professional healthcare solutions</p>
+        <p class="section-subtitle">Explore our comprehensive range of Electronics, Security & Smart Devices</p>
       </div>
 
       <div class="carousel-wrapper">

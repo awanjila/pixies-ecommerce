@@ -1,11 +1,11 @@
 @extends('layouts.front_app')
 
 @section('title')
-wabegadgets | Surgical & Medical Supplies in Nairobi Ke
+wabegadgets | Electronics, Security & Smart Devices in Nairobi Ke
 
 @endsection
 
-@section('meta_title', 'wabegadgets provides reliable surgical instruments, medical supplies, and hospital equipment for clinics and hospitals in Nairobi, Kenya.')
+@section('meta_title', 'wabegadgets provides reliable Electronics, Security & Smart Devices  in Nairobi, Kenya.')
 
 @section('content')
 
