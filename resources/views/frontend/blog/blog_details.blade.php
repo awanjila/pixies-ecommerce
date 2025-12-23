@@ -1,0 +1,16 @@
+@extends('layouts.front_app')
+
+@section('title')
+wabegadgets | Surgical Instruments & Medical Supplies in Nairobi Kenya
+@endsection
+
+@section('content')
+
+<div class="container">
+<!-- <share-blog-details :blog="{{ json_encode($blog) }}"></share-blog-details> -->
+  <blog-details :blog="{{ json_encode($blog) }}"></blog-details>
+  <!-- Subscription Section -->
+  <!-- <subscription-component /> -->
+</div>
+
+@endsection
