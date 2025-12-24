@@ -25,52 +25,67 @@ class CategoryController extends Controller
         return view('backoffice.category.add_category', compact('categories'));
     } //endmethod
 
+       public function StoreCategory(Request $request)
+{
+    $data = $request->validate([
+        'category_name' => 'required|string|max:200|unique:categories,category_name',
+        'meta_title' => 'required|string|max:255',
+        'category_description' => 'nullable|string',
+        'category_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'parent_id' => 'nullable|exists:categories,id',
+    ]);
 
-    public function StoreCategory(Request $request)
-    {
-        $data = $request->validate([
-            'category_name' => 'required|string|max:200|unique:categories',
-            'meta_title' => 'required|string',
-            'category_description' => 'nullable|string',
-            'category_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
+    try {
+        // Handle image upload
+        $imagePath = null;
 
-        // Handle category image upload
         if ($request->hasFile('category_image')) {
-            $category_image = $request->file('category_image');
-            $name_gen = hexdec(uniqid()) . '.' . $category_image->getClientOriginalExtension();
-            
-            // Create the upload directory if it doesn't exist
-            $upload_path = public_path('upload/categories');
-            if (!file_exists($upload_path)) {
-                mkdir($upload_path, 0777, true);
+            $image = $request->file('category_image');
+            $name = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+
+            $path = public_path('upload/categories');
+            if (!file_exists($path)) {
+                mkdir($path, 0755, true);
             }
 
-            // Move the uploaded file directly
-            $category_image->move(public_path('upload/categories'), $name_gen);
-            $save_url = 'upload/categories/' . $name_gen;
+            $image->move($path, $name);
+            $imagePath = 'upload/categories/' . $name;
         }
 
-        // Create a new Category instance with validated data
+        // Prepare category instance (NO tree fields)
         $category = new Category([
             'category_name' => $data['category_name'],
             'meta_title' => $data['meta_title'],
-            'category_description' => $data['category_description'],
+            'category_description' => $data['category_description'] ?? null,
             'slug' => Str::slug($data['category_name']),
-            'category_image' => $save_url ?? null,
+            'category_image' => $imagePath,
         ]);
 
-        // Save the category
-        $category->save();
+        // Tree-safe insertion
+        if (!empty($data['parent_id'])) {
+            $parent = Category::findOrFail($data['parent_id']);
+            $category->appendToNode($parent)->save();
+        } else {
+            $category->saveAsRoot();
+        }
 
-        // Redirect with success message
-        $notification = [
+        return redirect()->route('all.category')->with([
             'message' => 'Category added successfully',
             'alert-type' => 'success',
-        ];
+        ]);
 
-        return redirect()->route('all.category')->with($notification);
+    } catch (\Throwable $e) {
+        \Log::error('Category creation failed', [
+            'error' => $e->getMessage(),
+        ]);
+
+        return redirect()->back()->with([
+            'message' => 'Failed to add category',
+            'alert-type' => 'error',
+        ])->withInput();
     }
+}//endmethod
+
 
 
     public function EditCategory($id){

@@ -8,22 +8,24 @@ use Kalnoy\Nestedset\NodeTrait;
 
 class Category extends Model
 {
-    use HasFactory;
-   
+    use HasFactory, NodeTrait;
 
-    protected $table = 'categories';
-    protected $guarded = [];
-
+    protected $fillable = [
+        'category_name',
+        'slug',
+        'meta_title',
+        'category_description',
+        'category_image',
+        'parent_id',
+    ];
 
     public function products()
     {
-        return $this->hasMany(Product::class, 'category_id', 'id');
+        return $this->hasMany(Product::class);
     }
 
-
-    public function getRouteKeyName(){
+    public function getRouteKeyName()
+    {
         return 'slug';
     }
-    
-
 }
