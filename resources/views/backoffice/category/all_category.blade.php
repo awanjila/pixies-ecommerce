@@ -237,8 +237,7 @@
                                name="category_image" 
                                class="form-control @error('category_image') is-invalid @enderror" 
                                id="image"
-                               accept="image/jpeg,image/png,image/jpg,image/gif"
-                               required>
+                               accept="image/jpeg,image/png,image/jpg,image/gif">
                         <small class="text-muted">Recommended: Square image, minimum 500x500px. Max 2MB.</small>
                         @error('category_image')
                         <span class="text-danger small">{{ $message }}</span>
