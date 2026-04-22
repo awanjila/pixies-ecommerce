@@ -1,84 +1,87 @@
 <template>
   <div class="subscription-section">
     <div class="subscription-content">
-      <h4>Join 1,000+ Vaping Pros Who Receive our Weekly newsletter.</h4>
-      <p>Get the most relevant, Vaping insights you need to make smarter decisions faster... all in under five minutes.</p>
-      <form action="#" method="post">
-        <div class="form-group">
-          <input type="text" class="form-control" id="name" placeholder="First Name">
-        </div>
-        <div class="form-group">
-          <input type="email" class="form-control" id="email" placeholder="Enter your email">
-        </div>
-        <button type="submit" class="btn btn-primary">Subscribe Now</button>
+      <h4>Stay Updated</h4>
+      <p>Subscribe to our newsletter for the latest products and offers.</p>
+      <form action="#" method="post" class="subscription-form">
+        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+        <button type="submit" class="btn-submit">Subscribe</button>
       </form>
     </div>
   </div>
 </template>
 
-<style>
+<style scoped>
 .subscription-section {
-  position: fixed;
-  bottom: 0;
-  z-index: 999;
-  background: linear-gradient(to bottom, rgba(29, 29, 31, 1), rgba(29, 29, 31, 0.8));
-  color: white;
-  padding: 30px;
-  border-radius: 15px;
-  width: 100%;
+  background: #171616;
+  padding: 2.5rem 1.5rem;
+  border: 1px solid #2a2a2a;
 }
 
 .subscription-content {
+  max-width: 500px;
+  margin: 0 auto;
   text-align: center;
 }
 
 .subscription-content h4 {
-  margin-bottom: 20px;
-  font-family: var(--fontHeading);
-  font-size: 24px;
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
 }
 
 .subscription-content p {
-  margin-bottom: 10px;
-  font-family: var(--fontSerif);
-  font-size: 14px;
+  color: #9ca3af;
+  font-size: 0.875rem;
+  margin: 0 0 1.25rem;
 }
 
-.form-group {
-  margin-bottom: 15px;
+.subscription-form {
+  display: flex;
+  gap: 0.75rem;
 }
 
 .form-control {
-  background-color: #F6F9FC;
-  color: #1d1d1f;
-  border-color: #CCCCCC;
-  border-radius: 5px;
-  padding: 10px;
-  width: 100%;
+  flex: 1;
+  background-color: #ffffff;
+  color: #171616;
+  border: 1px solid #e5e5e5;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
 }
 
-.btn-primary {
-  background-color: #026fff;
-  border-color: #026fff;
-  border-radius: 5px;
-  width: 100%;
-  color: white;
-  padding: 10px;
-  font-size: 16px;
+.form-control::placeholder {
+  color: #999;
 }
 
-.btn-primary:hover {
-  background-color: darkblue;
-  border-color: darkblue;
+.form-control:focus {
+  outline: none;
+  border-color: #95002a;
 }
 
-@media (min-width: 768px) {
-  .subscription-section {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    width: 300px;
+.btn-submit {
+  background-color: #95002a;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+  background-color: #7a0022;
+}
+
+@media (max-width: 480px) {
+  .subscription-form {
+    flex-direction: column;
+  }
+  
+  .btn-submit {
+    width: 100%;
   }
 }
 </style>
