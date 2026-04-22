@@ -456,16 +456,15 @@ export default {
 
 <style scoped>
 .product-detail {
-  background: linear-gradient(to bottom, #f9fafb 0%, #ffffff 100%);
+  background: #ffffff;
   min-height: 100vh;
 }
 
 /* Breadcrumb */
 .breadcrumb-area {
-  background: linear-gradient(135deg, #0a609d 0%, #084c74 100%);
+  background: #95002a;
   padding: 32px 0;
   margin-bottom: 48px;
-  box-shadow: 0 4px 12px rgba(10, 154, 115, 0.2);
 }
 
 .container {
@@ -563,7 +562,7 @@ export default {
   align-items: center;
   gap: 6px;
   padding: 8px 16px;
-  background: linear-gradient(135deg, #0a609d 0%, #084c74 100%);
+  background: linear-gradient(135deg, #95002a 0%, #95002a 100%);
   color: white;
   border-radius: 20px;
   font-size: 0.75rem;
@@ -578,7 +577,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  background: #f5f5f5;
   border-radius: 16px;
   overflow: hidden;
   margin-bottom: 20px;
@@ -637,12 +636,12 @@ export default {
 }
 
 .thumbnail:hover {
-  border-color: #0a609d;
+  border-color: #95002a;
   transform: scale(1.05);
 }
 
 .thumbnail.active {
-  border-color: #0a609d;
+  border-color: #95002a;
   box-shadow: 0 4px 12px rgba(10, 154, 115, 0.3);
 }
 
@@ -702,18 +701,18 @@ export default {
 }
 
 .product-category i {
-  color: #0a609d;
+  color: #95002a;
 }
 
 .category-link {
-  color: #0a609d;
+  color: #95002a;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
 .category-link:hover {
-  color: #084c74;
+  color: #95002a;
 }
 
 .product-price-section {
@@ -740,7 +739,7 @@ export default {
 .amount {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #0a609d;
+  color: #95002a;
 }
 
 .price-note {
@@ -775,7 +774,7 @@ export default {
 }
 
 .highlight-item i {
-  color: #0a609d;
+  color: #95002a;
   font-size: 1.125rem;
 }
 
@@ -802,8 +801,8 @@ export default {
 }
 
 .secondary-button:hover {
-  border-color: #0a609d;
-  color: #0a609d;
+  border-color: #95002a;
+  color: #95002a;
   background: #f0fdf4;
 }
 
@@ -948,17 +947,17 @@ export default {
 }
 
 .tab-button:hover {
-  color: #0a609d;
+  color: #95002a;
   background: rgba(10, 154, 115, 0.05);
 }
 
 .tab-button.active {
-  color: #0a609d;
+  color: #95002a;
   background: white;
 }
 
 .tab-button.active::after {
-  background: linear-gradient(135deg, #0a609d 0%, #084c74 100%);
+  background: #95002a;
 }
 
 .tab-panel {
@@ -997,7 +996,7 @@ border-radius: 12px;
 }
 .shipping-item i {
 font-size: 1.5rem;
-color: #0a609d;
+color: #95002a;
 flex-shrink: 0;
 margin-top: 4px;
 }
@@ -1066,14 +1065,14 @@ position: relative;
 .product-card:hover {
 transform: translateY(-8px);
 box-shadow: 0 12px 24px rgba(10, 154, 115, 0.15);
-border-color: #0a609d;
+border-color: #95002a;
 }
 .card-badge {
 position: absolute;
 top: 12px;
 left: 12px;
 padding: 6px 12px;
-background: linear-gradient(135deg, #0a609d 0%, #084c74 100%);
+background: linear-gradient(135deg, #95002a 0%, #95002a 100%);
 color: white;
 border-radius: 20px;
 font-size: 0.75rem;
@@ -1082,7 +1081,7 @@ z-index: 2;
 }
 .product-image {
 height: 200px;
-background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+background: #f5f5f5;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -1124,7 +1123,7 @@ overflow: hidden;
 transition: color 0.3s ease;
 }
 .product-name a:hover {
-color: #0a609d;
+color: #95002a;
 }
 .product-price {
 display: flex;
@@ -1140,7 +1139,7 @@ font-weight: 500;
 .price-value {
 font-size: 1.25rem;
 font-weight: 700;
-color: #0a609d;
+color: #95002a;
 }
 .view-product {
 display: inline-flex;
@@ -1148,7 +1147,7 @@ align-items: center;
 gap: 6px;
 padding: 8px 16px;
 background: linear-gradient(135deg, #f0fdf4 0%, #B0E0E6 100%);
-color: #0a609d;
+color: #95002a;
 border-radius: 8px;
 text-decoration: none;
 font-size: 0.875rem;
@@ -1156,7 +1155,7 @@ font-weight: 600;
 transition: all 0.3s ease;
 }
 .view-product:hover {
-background: linear-gradient(135deg, #0a609d 0%, #084c74 100%);
+background: linear-gradient(135deg, #95002a 0%, #95002a 100%);
 color: white;
 transform: translateX(4px);
 }
@@ -1168,8 +1167,8 @@ width: 48px;
 height: 48px;
 border-radius: 50%;
 background: white;
-border: 2px solid #0a609d;
-color: #0a609d;
+border: 2px solid #95002a;
+color: #95002a;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -1185,7 +1184,7 @@ left: -24px;
 right: -24px;
 }
 .nav-btn:hover:not(:disabled) {
-background: linear-gradient(135deg, #0a609d 0%, #084c74 100%);
+background: linear-gradient(135deg, #95002a 0%, #95002a 100%);
 color: white;
 transform: translateY(-50%) scale(1.1);
 }
@@ -1293,11 +1292,11 @@ transition: all 0.3s ease;
 flex-shrink: 0;
 }
 .modal-thumbnail:hover {
-border-color: #0a609d;
+border-color: #95002a;
 transform: scale(1.05);
 }
 .modal-thumbnail.active {
-border-color: #0a609d;
+border-color: #95002a;
 box-shadow: 0 4px 12px rgba(10, 154, 115, 0.3);
 }
 /* Loading State */
@@ -1306,7 +1305,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 min-height: 100vh;
-background: linear-gradient(to bottom, #f9fafb 0%, #ffffff 100%);
+background: #ffffff;
 }
 .loading-spinner {
 text-align: center;
@@ -1316,7 +1315,7 @@ width: 60px;
 height: 60px;
 margin: 0 auto 20px;
 border: 4px solid rgba(10, 154, 115, 0.1);
-border-top-color: #0a609d;
+border-top-color: #95002a;
 border-radius: 50%;
 animation: spin 1s linear infinite;
 }
@@ -1324,14 +1323,14 @@ animation: spin 1s linear infinite;
 width: 50px;
 height: 50px;
 margin-top: -55px;
-border-top-color: #084c74;
+border-top-color: #95002a;
 animation-delay: -0.3s;
 }
 .spinner-ring:nth-child(3) {
 width: 40px;
 height: 40px;
 margin-top: -50px;
-border-top-color: #0a609d;
+border-top-color: #95002a;
 animation-delay: -0.6s;
 }
 @keyframes spin {
