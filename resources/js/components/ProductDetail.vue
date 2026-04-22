@@ -564,13 +564,13 @@ export default {
   align-items: center;
   gap: 6px;
   padding: 8px 16px;
-  background: linear-gradient(135deg, #95002a 0%, #95002a 100%);
+background: #95002a;
   color: white;
   border-radius: 20px;
   font-size: 0.75rem;
   font-weight: 600;
   z-index: 2;
-  box-shadow: 0 4px 12px rgba(10, 154, 115, 0.3);
+  border: 1px solid #e5e5e5;
 }
 
 .main-image {
@@ -635,7 +635,7 @@ export default {
 
 .thumbnail.active {
   border-color: #95002a;
-  box-shadow: 0 4px 12px rgba(10, 154, 115, 0.3);
+  border: 1px solid #e5e5e5;
 }
 
 /* Product Info */
@@ -709,9 +709,9 @@ export default {
 .product-price-section {
   margin-bottom: 32px;
   padding: 24px;
-  background: linear-gradient(135deg, #f0fdf4 0%, #B0E0E6 100%);
+  background: #f5f5f5;
   border-radius: 16px;
-  border: 2px solid #87CEFA;
+  border: 1px solid #e5e5e5;
 }
 
 .price-main {
@@ -1027,7 +1027,7 @@ line-height: 1.6;
 /* Related Products */
 .related-products {
 padding: 64px 0;
-background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+background: #ffffff;
 border-radius: 20px;
 margin: -32px -24px 0;
 padding: 64px 24px;
@@ -1076,17 +1076,17 @@ border: 1px solid #e5e7eb;
 position: relative;
 }
 .product-card:hover {
-transform: translateY(-8px);
-box-shadow: 0 12px 24px rgba(10, 154, 115, 0.15);
-border-color: #95002a;
+  transform: translateY(-8px);
+  border: 1px solid #e5e5e5;
+  border-color: #95002a;
 }
 .card-badge {
 position: absolute;
 top: 12px;
 left: 12px;
 padding: 6px 12px;
-background: linear-gradient(135deg, #95002a 0%, #95002a 100%);
-color: white;
+  background: #95002a;
+  color: white;
 border-radius: 20px;
 font-size: 0.75rem;
 font-weight: 600;
@@ -1159,8 +1159,8 @@ display: inline-flex;
 align-items: center;
 gap: 6px;
 padding: 8px 16px;
-background: linear-gradient(135deg, #f0fdf4 0%, #B0E0E6 100%);
-color: #95002a;
+  background: #f5f5f5;
+  color: #95002a;
 border-radius: 8px;
 text-decoration: none;
 font-size: 0.875rem;
@@ -1168,8 +1168,8 @@ font-weight: 600;
 transition: all 0.3s ease;
 }
 .view-product:hover {
-background: linear-gradient(135deg, #95002a 0%, #95002a 100%);
-color: white;
+  background: #95002a;
+  color: white;
 transform: translateX(4px);
 }
 .nav-btn {
@@ -1187,8 +1187,8 @@ align-items: center;
 justify-content: center;
 cursor: pointer;
 transition: all 0.3s ease;
-box-shadow: 0 4px 12px rgba(10, 154, 115, 0.2);
-z-index: 2;
+  border: 1px solid #e5e7eb;
+  z-index: 2;
 }
 .nav-btn.prev {
 left: -24px;
@@ -1197,8 +1197,8 @@ left: -24px;
 right: -24px;
 }
 .nav-btn:hover:not(:disabled) {
-background: linear-gradient(135deg, #95002a 0%, #95002a 100%);
-color: white;
+  background: #95002a;
+  color: white;
 transform: translateY(-50%) scale(1.1);
 }
 .nav-btn:disabled {
@@ -1309,8 +1309,8 @@ border-color: #95002a;
 transform: scale(1.05);
 }
 .modal-thumbnail.active {
-border-color: #95002a;
-box-shadow: 0 4px 12px rgba(10, 154, 115, 0.3);
+  border-color: #95002a;
+  border: 1px solid #e5e5e5;
 }
 /* Loading State */
 .loading-container {
