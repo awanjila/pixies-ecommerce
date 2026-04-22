@@ -113,12 +113,17 @@
             </div>
 
             <div class="product-actions">
-              <CheckOutButton 
-                :product-id="product.id"
-                :product-name="product.product_name" 
-                :selling-price="product.selling_price"
-              />
-            
+              <a 
+                :href="whatsappLink" 
+                class="whatsapp-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.964-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.174.198-.298.298-.397.099-.1.198-.173.347-.083.297.15.746.585.886 1.07l.015.03c.198 1.136.916 1.843 1.446 1.891.33.03.609-.06.784-.178.173-.148.298-.347.397-.521.149-.149.173-.298.074-.397-.074-.074-.672-.636-.917-.861-.245-.224-.52-.247-.74-.124-.218.124-.462.347-.581.486-.119.139-.198.198-.298.298-.099.1-.149.173-.223.297z"/>
+                </svg>
+                Buy with Shop
+              </a>
             </div>
 
             <div class="product-contact">
@@ -325,13 +330,8 @@
 </template>
 
 <script>
-import CheckOutButton from './CheckOutButtonComponent.vue'
-
 export default {
   name: 'ProductDetail',
-  components: {
-    CheckOutButton
-  },
   props: {
     product: {
       type: Object,
@@ -354,6 +354,11 @@ export default {
     }
   },
   computed: {
+    whatsappLink() {
+      const phone = '254710909198';
+      const message = `Hi, I'm interested in buying: ${this.product.product_name} - Ksh ${this.formatPrice(this.product.selling_price)}`;
+      return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    },
     getCategoryName() {
       if (this.product && this.product.category && this.product.category.category_name) {
         return this.product.category.category_name;
@@ -782,6 +787,30 @@ export default {
   display: flex;
   gap: 16px;
   margin-bottom: 32px;
+}
+
+.whatsapp-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+  color: white;
 }
 
 .secondary-button {
