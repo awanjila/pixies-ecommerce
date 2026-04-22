@@ -275,58 +275,28 @@ export default {
     position: relative;
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 0;
 }
 
 .carousel-container {
     flex: 1;
-    overflow: hidden;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin: 0 40px;
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
 }
 
 .carousel-track {
     display: flex;
-    transition: transform 0.4s ease;
-}
-
-.carousel-arrow {
-    flex-shrink: 0;
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #e5e5e5;
-    background: #fff;
-    color: #171616;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-
-.carousel-arrow:hover {
-    background: #fafafa;
-    border-color: #d9d9d9;
-}
-
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 20px;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    border: none;
-    background: #e5e5e5;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.dot.active {
-    background: #95002a;
+    gap: 18px;
+    padding: 4px 0;
 }
 
 .product-card {
@@ -334,14 +304,76 @@ export default {
     flex-direction: column;
     border: 1px solid #e5e5e5;
     background: #fff;
-    border-radius: 8px;
+    border-radius: 12px;
+    padding: 16px;
     overflow: hidden;
     transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    scroll-snap-align: start;
+    flex: 0 0 calc((100% - (5 * 18px)) / 6);
+    min-width: calc((100% - (5 * 18px)) / 6);
 }
 
 .product-card:hover {
     border-color: #d9d9d9;
     box-shadow: 0 8px 20px rgba(23, 22, 22, 0.08);
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s ease;
+    color: #171616;
+}
+
+.carousel-arrow:hover {
+    background: #95002a;
+    border-color: #95002a;
+    color: #fff;
+}
+
+.prev-arrow {
+    left: 0;
+}
+
+.next-arrow {
+    right: 0;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #95002a;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.dot.active {
+    background: #95002a;
+}
+
+.dot:hover {
+    background: #95002a;
 }
 
 .product-image-link {
@@ -470,55 +502,32 @@ export default {
 }
 
 @media (max-width: 1200px) {
-    .carousel-track {
-        gap: 16px;
+    .product-card {
+        flex: 0 0 calc((100% - (3 * 18px)) / 4);
+        min-width: calc((100% - (3 * 18px)) / 4);
     }
 }
 
 @media (max-width: 992px) {
-    .carousel-track {
-        gap: 14px;
+    .product-card {
+        flex: 0 0 calc((100% - (2 * 18px)) / 3);
+        min-width: calc((100% - (2 * 18px)) / 3);
     }
 }
 
 @media (max-width: 768px) {
-    .trending-section {
-        padding: 42px 0;
+    .product-card {
+        flex: 0 0 calc((100% - 18px) / 2);
+        min-width: calc((100% - 18px) / 2);
     }
-
-    .section-title {
-        font-size: 1.45rem;
+    
+    .carousel-container {
+        margin: 0 36px;
     }
-
-    .carousel-track {
-        gap: 12px;
-    }
-
-    .product-image-link {
-        height: 190px;
-    }
-
+    
     .carousel-arrow {
-        width: 38px;
-        height: 38px;
-    }
-}
-
-@media (max-width: 540px) {
-    .container {
-        padding: 0 14px;
-    }
-
-    .section-header {
-        margin-bottom: 18px;
-    }
-
-    .carousel-arrow {
-        display: none;
-    }
-
-    .carousel-track {
-        gap: 10px;
+        width: 36px;
+        height: 36px;
     }
 }
 </style>
