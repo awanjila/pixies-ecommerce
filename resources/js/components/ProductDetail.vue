@@ -551,12 +551,9 @@ export default {
 
 /* Product Images */
 .product-images {
-  background: white;
-  padding: 32px;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e5e7eb;
-  position: relative;
+  background: #ffffff;
+  padding: 24px;
+  border: 1px solid #e5e5e5;
 }
 
 .image-badge {
@@ -577,18 +574,9 @@ export default {
 }
 
 .main-image {
-  width: 100%;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: #f5f5f5;
-  border-radius: 16px;
-  overflow: hidden;
-  margin-bottom: 20px;
-  position: relative;
-  cursor: zoom-in;
-  transition: all 0.3s ease;
+  border-radius: 8px;
+  margin-bottom: 16px;
 }
 
 .main-image:hover {
@@ -652,11 +640,9 @@ export default {
 
 /* Product Info */
 .product-info {
-  background: white;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  padding: 24px;
+  border: 1px solid #e5e5e5;
 }
 
 .product-header {
@@ -790,27 +776,25 @@ export default {
 }
 
 .whatsapp-btn {
-  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 16px 24px;
-  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-  color: white;
+  width: 100%;
+  padding: 14px 24px;
+  background: #25d366;
+  color: #ffffff;
   border: none;
-  border-radius: 12px;
-  font-weight: 600;
+  border-radius: 6px;
   font-size: 1rem;
-  cursor: pointer;
+  font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .whatsapp-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
-  color: white;
+  background: #1ebc57;
 }
 
 .secondary-button {
