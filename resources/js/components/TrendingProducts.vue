@@ -117,17 +117,15 @@ export default {
             loading: true,
             error: null,
             currentDot: 0,
-            itemsPerPage: 6
+            productsPerSlide: 6
         }
     },
     computed: {
         visibleProducts() {
-            const start = this.currentDot * this.itemsPerPage;
-            const end = start + this.itemsPerPage;
-            return this.trendingProducts.slice(start, end);
+            return this.trendingProducts;
         },
         totalDots() {
-            return Math.ceil(this.trendingProducts.length / this.itemsPerPage);
+            return Math.ceil(this.trendingProducts.length / this.productsPerSlide);
         }
     },
     methods: {
@@ -187,26 +185,50 @@ export default {
             this.productToAddToCart = null;
         },
         scrollCarousel(direction) {
-            if (direction === 'next') {
-                if (this.currentDot < this.totalDots - 1) {
-                    this.currentDot++;
-                } else {
-                    this.currentDot = 0;
-                }
-            } else {
-                if (this.currentDot > 0) {
-                    this.currentDot--;
-                } else {
-                    this.currentDot = this.totalDots - 1;
-                }
-            }
+            const container = this.$refs.carouselContainer;
+            if (!container) return;
+            
+            const cardWidth = container.querySelector('.product-card')?.offsetWidth || 200;
+            const gap = 18;
+            const scrollAmount = direction === 'next' 
+                ? cardWidth * this.productsPerSlide + gap 
+                : -(cardWidth * this.productsPerSlide + gap);
+            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         },
         goToDot(index) {
+            const container = this.$refs.carouselContainer;
+            if (!container) return;
+            
+            const cardWidth = container.querySelector('.product-card')?.offsetWidth || 200;
+            const gap = 18;
+            const scrollLeft = index * (cardWidth * this.productsPerSlide + gap);
+            container.scrollTo({ left: scrollLeft, behavior: 'smooth' });
             this.currentDot = index;
+        },
+        updateCurrentDot() {
+            const container = this.$refs.carouselContainer;
+            if (!container) return;
+            
+            const cardWidth = container.querySelector('.product-card')?.offsetWidth || 200;
+            const gap = 18;
+            const scrollLeft = container.scrollLeft;
+            this.currentDot = Math.round(scrollLeft / (cardWidth * this.productsPerSlide + gap));
         }
     },
     mounted() {
         this.fetchTrendingProducts();
+        this.$nextTick(() => {
+            const container = this.$refs.carouselContainer;
+            if (container) {
+                container.addEventListener('scroll', this.updateCurrentDot);
+            }
+        });
+    },
+    beforeUnmount() {
+        const container = this.$refs.carouselContainer;
+        if (container) {
+            container.removeEventListener('scroll', this.updateCurrentDot);
+        }
     }
 }
 </script>
