@@ -181,7 +181,7 @@ export default {
 
 .modal-image {
   flex: 0.8;
-  background: linear-gradient(135deg, #0a609d 0%, #084c74 100%);
+  background: #171616;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -189,19 +189,7 @@ export default {
   padding: 1.5rem;
   position: relative;
   color: white;
-  overflow: hidden;
   min-height: 180px;
-}
-
-.modal-image::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('/front-assets/img/pattern.png') repeat;
-  opacity: 0.1;
 }
 
 .brand-logo {
@@ -225,16 +213,14 @@ export default {
 }
 
 .discount-badge {
-  background: white;
-  color: #0a609d;
+  background: #95002a;
+  color: white;
   padding: 0.5rem 1rem;
-  border-radius: 999px;
+  border-radius: 0.25rem;
   font-weight: bold;
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
   display: inline-block;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transform: rotate(-3deg);
 }
 
 .modal-form {
@@ -282,41 +268,32 @@ export default {
 
 .form-input:focus {
   outline: none;
-  border-color: #0a609d;
+  border-color: #95002a;
   background: white;
-  box-shadow: 0 0 0 3px rgba(255, 75, 31, 0.1);
 }
 
 .error-alert {
-  background: #FEE2E2;
-  color: #0a609d;
-  padding: 1rem;
-  border-radius: 0.75rem;
+  background: #fecaca;
+  color: #95002a;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
   font-size: 0.875rem;
-  margin-bottom: 1rem;
-  border: 1px solid #FCA5A5;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 .submit-btn {
-  background: #0a609d;
+  background: #95002a;
   color: white;
   padding: 0.625rem 1rem;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.375rem;
   font-weight: 600;
   font-size: 0.875rem;
   cursor: pointer;
-  transition: all 0.2s;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  transition: background-color 0.2s;
 }
 
 .submit-btn:hover {
-  background: #e63900;
-  transform: translateY(-1px);
+  background: #7a0022;
 }
 
 .skip-btn {
@@ -337,7 +314,7 @@ export default {
 }
 
 .privacy-text a {
-  color: #0a609d;
+  color: #95002a;
   text-decoration: none;
 }
 
