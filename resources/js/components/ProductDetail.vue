@@ -355,8 +355,8 @@ export default {
   },
   computed: {
     whatsappLink() {
-      const phone = '254710909198';
-      const message = `Hi, I'm interested in buying: ${this.product.product_name} - Ksh ${this.formatPrice(this.product.selling_price)}`;
+      const phone = '254798742543';
+      const message = `Hi, I'm interested in: ${this.product.product_name} - KES ${this.formatPrice(this.product.selling_price)}`;
       return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     },
     getCategoryName() {
