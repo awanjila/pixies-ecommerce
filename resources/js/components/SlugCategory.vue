@@ -1,83 +1,78 @@
 <template>
-  <div class="product-area section-padding">
-    <div class="container">
-      <!-- Loading State -->
-      <div v-if="loading" class="loading-state">
-        <div class="loading-spinner"></div>
-        <p>Loading products...</p>
+  <div class="category-page">
+    <!-- Category Header -->
+    <div class="category-header">
+      <div class="container">
+        <h1 class="category-title">{{ categoryName }}</h1>
+        <div class="category-description" v-html="categoryDescription"></div>
       </div>
+    </div>
 
-      <!-- Error State -->
-      <div v-else-if="!productsData?.length" class="empty-state">
-        <p>No products found in this category</p>
-      </div>
+    <!-- Loading State -->
+    <div v-if="loading" class="loading-state">
+      <div class="loading-spinner"></div>
+      <p>Loading products...</p>
+    </div>
 
-      <!-- Content -->
-      <div v-else class="category-grid">
-        <!-- Sidebar with Category Info -->
-        <aside class="category-sidebar">
-          <div class="sidebar-widget">
-            <h4 class="widget-title">{{ categoryName }}</h4>
-            <div class="category-description" v-html="categoryDescription"></div>
-          </div>
-        </aside>
+    <!-- Error State -->
+    <div v-else-if="!productsData?.length" class="empty-state">
+      <p>No products found in this category</p>
+    </div>
 
-        <!-- Products Grid -->
-        <div class="products-section">
-          <div class="products-grid">
-            <div v-for="product in productsData" :key="product.id" class="product-card">
-              <div class="product-image">
-                <a :href="`/show/product/${product.slug}`">
-                  <img :src="getImagePath(product.product_image)" :alt="product.product_name">
-                </a>
-                <div class="product-badges">
-                  <span class="badge new">New</span>
-                </div>
-              </div>
-              <div class="product-info">
-                <h3 class="product-title">
-                  <a :href="`/show/product/${product.slug}`">{{ product.product_name }}</a>
-                </h3>
-                <div class="product-price">
-                  <span>Ksh {{ product.selling_price }}.00</span>
-                </div>
-                <button @click="addToCart(product)" class="add-to-cart-btn">
-                  Add to Cart
-                </button>
-              </div>
+    <!-- Products Grid -->
+    <div v-else class="container">
+      <div class="products-grid">
+        <div v-for="product in productsData" :key="product.id" class="product-card">
+          <div class="product-image">
+            <a :href="`/show/product/${product.slug}`">
+              <img :src="getImagePath(product.product_image)" :alt="product.product_name">
+            </a>
+            <div class="product-badges" v-if="product.is_featured">
+              <span class="badge featured">Featured</span>
             </div>
           </div>
-
-          <!-- Pagination -->
-          <div class="pagination" v-if="lastPage > 1">
-            <button 
-              class="page-btn prev" 
-              :disabled="currentPage === 1"
-              @click="changePage(currentPage - 1)"
-            >
-              <i class="fas fa-chevron-left"></i>
-            </button>
-
-            <div class="page-numbers">
-              <button 
-                v-for="page in displayedPages" 
-                :key="page"
-                @click="changePage(page)"
-                :class="['page-btn', { active: currentPage === page }]"
-              >
-                {{ page }}
-              </button>
+          <div class="product-info">
+            <h3 class="product-title">
+              <a :href="`/show/product/${product.slug}`">{{ product.product_name }}</a>
+            </h3>
+            <div class="product-price">
+              <span class="price-amount">Ksh {{ product.selling_price }}.00</span>
             </div>
-
-            <button 
-              class="page-btn next" 
-              :disabled="currentPage === lastPage"
-              @click="changePage(currentPage + 1)"
-            >
-              <i class="fas fa-chevron-right"></i>
+            <button @click="addToCart(product)" class="add-to-cart-btn">
+              Add to Cart
             </button>
           </div>
         </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination" v-if="lastPage > 1">
+        <button 
+          class="page-btn prev" 
+          :disabled="currentPage === 1"
+          @click="changePage(currentPage - 1)"
+        >
+          Previous
+        </button>
+
+        <div class="page-numbers">
+          <button 
+            v-for="page in displayedPages" 
+            :key="page"
+            @click="changePage(page)"
+            :class="['page-btn', { active: currentPage === page }]"
+          >
+            {{ page }}
+          </button>
+        </div>
+
+        <button 
+          class="page-btn next" 
+          :disabled="currentPage === lastPage"
+          @click="changePage(currentPage + 1)"
+        >
+          Next
+        </button>
       </div>
     </div>
   </div>
@@ -301,27 +296,28 @@ onMounted(() => {
 }
 
 .product-price {
-  color: #95002a;
-  font-weight: 600;
-  font-size: 1.1rem;
+  color: #171616;
+  font-weight: 700;
+  font-size: 1rem;
   margin-bottom: 0.75rem;
 }
 
 .add-to-cart-btn {
   width: 100%;
   padding: 0.625rem 1rem;
-  background: #95002a;
-  color: white;
-  border: none;
-  border-radius: 0.375rem;
-  font-size: 0.875rem;
+  background: #ffffff;
+  color: #171616;
+  border: 1px solid #171616;
+  border-radius: 4px;
+  font-size: 0.8125rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .add-to-cart-btn:hover {
-  background: #7a0022;
+  background: #171616;
+  color: #ffffff;
 }
 
 .pagination {
