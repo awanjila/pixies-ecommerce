@@ -186,11 +186,8 @@ onMounted(() => {
   background: white;
   padding: 1.5rem;
   border-radius: 0.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e5e5;
   height: fit-content;
-}
-
-background: #f5f5f5;
 }
 
 .widget-title {
