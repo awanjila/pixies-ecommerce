@@ -33,17 +33,6 @@
                 <div class="product-badges">
                   <span class="badge new">New</span>
                 </div>
-                <div class="product-actions">
-                  <button class="action-btn" @click="$router.push(`/show/product/${product.slug}`)" title="Quick View">
-                    <i class="far fa-eye"></i>
-                  </button>
-                  <button class="action-btn" @click="addToCart(product)" title="Add to Cart">
-                    <i class="fas fa-shopping-cart"></i>
-                  </button>
-                  <button class="action-btn" title="Wishlist">
-                    <i class="far fa-heart"></i>
-                  </button>
-                </div>
               </div>
               <div class="product-info">
                 <h3 class="product-title">
@@ -52,6 +41,9 @@
                 <div class="product-price">
                   <span>Ksh {{ product.selling_price }}.00</span>
                 </div>
+                <button @click="addToCart(product)" class="add-to-cart-btn">
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
@@ -198,59 +190,62 @@ onMounted(() => {
   height: fit-content;
 }
 
+background: #f5f5f5;
+}
+
 .widget-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #1f2937;
+  color: #171616;
   margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid #0a609d;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #95002a;
 }
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: #e5e5e5;
+  border: 1px solid #e5e5e5;
 }
 
 .product-card {
   background: white;
-  border-radius: 0.5rem;
+  border-radius: 0;
   overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-color: #95002a;
 }
 
 .product-image {
   position: relative;
-  height: 250px;
-  background: #f8fafc;
+  height: 220px;
+  background: #f5f5f5;
+  padding: 1rem;
 }
 
 .product-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .product-badges {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: 0.75rem;
+  left: 0.75rem;
 }
 
 .badge {
-  padding: 0.25rem 0.75rem;
+  padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
   font-size: 0.75rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  background: #0a609d;
+  font-weight: 600;
+  background: #95002a;
   color: white;
 }
 
@@ -287,28 +282,49 @@ onMounted(() => {
 }
 
 .action-btn:hover {
-  background: #0a609d;
+  background: #95002a;
   color: white;
 }
 
 .product-info {
   padding: 1rem;
+  border-top: 1px solid #e5e5e5;
 }
 
 .product-title {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
+  line-height: 1.4;
 }
 
 .product-title a {
-  color: #1f2937;
+  color: #171616;
   text-decoration: none;
 }
 
 .product-price {
-  color: #0a609d;
+  color: #95002a;
   font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  padding: 0.625rem 1rem;
+  background: #95002a;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+  background: #7a0022;
 }
 
 .pagination {
@@ -335,9 +351,9 @@ onMounted(() => {
 
 .page-btn:hover:not(:disabled),
 .page-btn.active {
-  background: #0a609d;
+  background: #95002a;
   color: white;
-  border-color: #0a609d;
+  border-color: #95002a;
 }
 
 .page-btn:disabled {
@@ -354,8 +370,8 @@ onMounted(() => {
 .loading-spinner {
   width: 3rem;
   height: 3rem;
-  border: 3px solid #f3f3f3;
-  border-top: 3px solid #0a609d;
+  border: 3px solid #e5e5e5;
+  border-top: 3px solid #95002a;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin: 0 auto 1rem;
@@ -376,13 +392,19 @@ onMounted(() => {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
   .products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
   
   .product-image {
-    height: 200px;
+    height: 180px;
   }
 }
-</style> 
+</style>
