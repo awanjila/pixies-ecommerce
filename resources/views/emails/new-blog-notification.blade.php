@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>New Blog Post from wabegadgets</title>
+    <title>New Blog Post from Pixies Technologies</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -87,7 +87,7 @@
 <body>
     <div class="email-container">
         <div class="header">
-            <img src="{{ asset('front-assets/img/brand-logo/logo.png') }}" alt="wabegadgets Logo" class="logo">
+            <img src="{{ asset('front-assets/img/brand-logo/logo.png') }}" alt="Pixies Technologies Logo" class="logo">
         </div>
 
         <div class="blog-content">
@@ -105,7 +105,7 @@
         </div>
 
         <div class="about-us">
-            <h3>About wabegadgets</h3>
+            <h3>About Pixies Technologies</h3>
             <p>Your trusted partner in Surgical Instruments, Medical Supplies, and Healthcare Solutions. We provide top-quality surgical tools and hospital equipment to keep your healthcare facility well-equipped and efficient.</p>
         </div>
 
@@ -125,8 +125,8 @@
         </div>
 
         <div class="footer">
-            <p>© {{ date('Y') }} wabegadgets. All rights reserved.</p>
-            <p>Contact us: info@wabegadgets.com | +254 711 682 744</p>
+            <p>© {{ date('Y') }} Pixies Technologies. All rights reserved.</p>
+            <p>Contact us: info@pixies.co.ke | +254 798 742 543</p>
             <p>If you no longer wish to receive these emails, you can <a href="{{ url('/unsubscribe') }}">unsubscribe here</a></p>
         </div>
     </div>

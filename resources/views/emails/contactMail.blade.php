@@ -1,6 +1,6 @@
 @component('mail::message')
 
-# You Have Contact Mail From wabegadgets' Online Shop
+# You Have Contact Mail From Pixies Technologies' Online Shop
 
 **Name:** {{ $data['name'] }}
 **Email:** {{ $data['email'] }}

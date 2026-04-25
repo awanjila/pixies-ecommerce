@@ -129,7 +129,7 @@
 </div>
 
 <footer class="footer footer-alt">
-    2023 - <script>document.write(new Date().getFullYear())</script> &copy; wabegadgets  <a href="" class="text-white-50">Wabe Studio</a>
+    2023 - <script>document.write(new Date().getFullYear())</script> &copy; Pixies Technologies <a href="" class="text-white-50">Wabe Studio</a>
 </footer>
 
 <!-- Vendor js -->

@@ -1,119 +1,48 @@
 <template>
     <header class="desktop-header">
-        <!-- Top Bar -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="top-bar-content">
-                    <div class="top-bar-left">
-                        <div class="contact-info">
-                            <a href="tel:+254710909198" class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+254 710 909 198</span>
-                            </a>
-                            <a href="mailto:info@wabegadgets.co.ke" class="contact-item">
-                                <i class="far fa-envelope"></i>
-                                <span>info@wabegadgets.co.ke</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="top-bar-right">
-                        <div class="trust-badge">
-                            <i class="fas fa-shield-check"></i>
-                        </div>
-                        <div class="social-icons">
-                            <a href="#" class="social-link facebook" title="Facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="social-link twitter" title="Twitter">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="social-link instagram" title="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" class="social-link linkedin" title="LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Main Header -->
+        <!-- Main Header - Row 1 -->
         <div class="main-header" :class="{ 'is-sticky': isScrolled }">
             <div class="container">
-                <div class="header-content">
+                <div class="header-row-1">
+                    <!-- Search Icon -->
+                    <Search />
+
+                    <!-- Logo (Center, Bigger) -->
                     <div class="logo-wrapper">
                         <a href="/" class="logo-link">
-                            <img src="/front-assets/img/brand-logo/logo.png" alt="Medical Equipment Logo" class="logo">
-                    
+                            <img src="/front-assets/img/brand-logo/logo.png" alt="Pixies Technologies" class="logo">
                         </a>
                     </div>
 
-                    <div class="header-center">
-                        <div class="contact-blocks">
-                            <div class="contact-block">
-                                <div class="icon">
-                                    <i class="fas fa-headset"></i>
-                                </div>
-                                <div class="info">
-                                    
-                                    <a href="tel:+254710909198" class="value">+254 710 909 198</a>
-                                </div>
-                            </div>
-                        </div>
-                        <Search />
-                    </div>
-
-                    <div class="header-actions">
-                       
-                        
-                        <ShowCart />
-                    </div>
+                    <!-- Cart -->
+                    <ShowCart />
                 </div>
             </div>
         </div>
 
-        <!-- Navigation -->
-        <nav class="main-nav" :class="{ 'is-sticky': isScrolled }">
+        <!-- Row 2: Categories & Nav -->
+        <div class="header-row-2">
             <div class="container">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="/" class="nav-link" :class="{ active: currentPath === '/' }">
-                            <i class="fas fa-home"></i>
-                            <span>Home</span>
+                <div class="header-row-2-content">
+                    <!-- Categories -->
+                    <nav class="categories-nav">
+                        <a 
+                            v-for="category in categories" 
+                            :key="category.id" 
+                            :href="`/category/${category.slug}`" 
+                            class="category-link"
+                        >
+                            {{ category.category_name }}
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/shop" class="nav-link" :class="{ active: currentPath === '/shop' }">
-                            <i class="fas fa-store"></i>
-                            <span>Shop</span>
-                        </a>
-                    </li>
-                    
-                    <!-- Random Categories -->
-                    <li v-for="category in randomCategories" :key="category.id" class="nav-item">
-                        <a :href="`/category/${category.slug}`" class="nav-link">
-                            <i class="fas fa-microchip"></i>
-                            <span>{{ category.category_name }}</span>
-                        </a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a href="/about/us" class="nav-link" :class="{ active: currentPath === '/about' }">
-                            <i class="fas fa-info-circle"></i>
-                            <span>About</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/contact/us" class="nav-link" :class="{ active: currentPath === '/contact/us' }">
-                            <i class="fas fa-envelope"></i>
-                            <span>Contact</span>
-                        </a>
-                    </li>
-                </ul>
+                    </nav>
+
+                    <!-- Nav Links -->
+                    <nav class="header-nav">
+                        <a href="/shop" class="nav-link" :class="{ active: currentPath === '/shop' }">Shop All</a>
+                    </nav>
+                </div>
             </div>
-        </nav>
+        </div>
     </header>
 </template>
 
@@ -131,38 +60,35 @@ export default {
     },
     setup() {
         const isScrolled = ref(false);
-        const randomCategories = ref([]);
         const currentPath = ref('/');
+        const categories = ref([]);
 
         const handleScroll = () => {
             isScrolled.value = window.scrollY > 50;
-        };
-
-        const fetchRandomCategories = async () => {
-            try {
-                const response = await axios.get('/api/wabegadgets/categories');
-                if (response.data.categories) {
-                    const activeCategories = response.data.categories.filter(category => 
-                        !(category.id === 1 && category.category_name.toLowerCase() === 'root') &&
-                        category.products?.length > 0
-                    );
-                    randomCategories.value = activeCategories
-                        .sort(() => Math.random() - 0.5)
-                        .slice(0, 4);
-                }
-            } catch (error) {
-                console.error('Error fetching categories:', error);
-            }
         };
 
         const updateCurrentPath = () => {
             currentPath.value = window.location.pathname;
         };
 
+        const fetchCategories = async () => {
+            try {
+                const response = await axios.get('/api/wabegadgets/categories');
+                if (response.data.categories) {
+                    categories.value = response.data.categories.filter(category => 
+                        category.category_name.toLowerCase() !== 'root' &&
+                        category.products?.length > 0
+                    );
+                }
+            } catch (error) {
+                console.error('Error fetching categories:', error);
+            }
+        };
+
         onMounted(() => {
             window.addEventListener('scroll', handleScroll);
             updateCurrentPath();
-            fetchRandomCategories();
+            fetchCategories();
         });
 
         onUnmounted(() => {
@@ -171,8 +97,8 @@ export default {
 
         return {
             isScrolled,
-            randomCategories,
-            currentPath
+            currentPath,
+            categories
         };
     }
 }
@@ -189,113 +115,9 @@ export default {
     }
 }
 
-/* Top Bar */
-.top-bar {
-    background: linear-gradient(135deg, #084c74 0%, #0a609d 100%);
-    padding: 10px 0;
-    font-size: 0.875rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.top-bar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.top-bar-left,
-.top-bar-right {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
-.contact-info {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
-.contact-item {
-    color: rgba(255, 255, 255, 0.95);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    padding: 4px 8px;
-    border-radius: 6px;
-}
-
-.contact-item:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-}
-
-.contact-item i {
-    font-size: 0.875rem;
-}
-
-.trust-badge {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 4px 12px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 20px;
-    color: white;
-    font-weight: 600;
-    font-size: 0.8125rem;
-}
-
-.trust-badge i {
-    color: #fbbf24;
-}
-
-.social-icons {
-    display: flex;
-    gap: 8px;
-}
-
-.social-link {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 6px;
-    color: white;
-    background: rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.social-link:hover {
-    background: white;
-    transform: translateY(-2px);
-}
-
-.social-link.facebook:hover {
-    color: #1877f2;
-}
-
-.social-link.twitter:hover {
-    color: #1da1f2;
-}
-
-.social-link.instagram:hover {
-    color: #e4405f;
-}
-
-.social-link.linkedin:hover {
-    color: #0077b5;
-}
-
-/* Main Header */
 .main-header {
-    background: white;
-    padding: 20px 0;
-    border-bottom: 1px solid #e5e7eb;
+    background: #ffffff;
+    padding: 14px 0;
     transition: all 0.3s ease;
     position: relative;
     z-index: 100;
@@ -307,293 +129,118 @@ export default {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 12px 0;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 10px 0;
+    border-bottom: 3px solid #95002a;
+}
+
+.header-row-2 {
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .container {
-    max-width: 1280px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 15px;
 }
 
-.header-content {
+.header-row-1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 32px;
 }
 
-/* Logo */
 .logo-wrapper {
-    flex-shrink: 0;
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .logo-link {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    display: block;
+    transition: opacity 0.2s ease;
 }
 
 .logo-link:hover {
-    transform: scale(1.02);
+    opacity: 0.85;
 }
 
 .logo {
-    height: 70px;
+    height: 60px;
     width: auto;
 }
 
 .main-header.is-sticky .logo {
-    height: 40px;
+    height: 45px;
 }
 
-.logo-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.brand-name {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #084c74;
-    line-height: 1.2;
-}
-
-.brand-tagline {
-    font-size: 0.75rem;
-    color: #0a609d;
-    font-weight: 500;
-}
-
-/* Header Center */
-.header-center {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    gap: 32px;
-}
-
-.contact-blocks {
-    display: flex;
-    gap: 16px;
-}
-
-.contact-block {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 16px;
-    background: linear-gradient(135deg, #f0fdf4 0%, #B0E0E6 100%);
-    border-radius: 12px;
-    border: 1px solid #87CEFA;
-    transition: all 0.3s ease;
-}
-
-.contact-block:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(10, 154, 115, 0.15);
-}
-
-.contact-block .icon {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, #0a609d 0%, #084c74 100%);
-    border-radius: 10px;
+.header-row-2-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 1.125rem;
+    gap: 20px;
+    padding: 10px 0;
 }
 
-.contact-block .info {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-block .label {
-    font-size: 0.75rem;
-    color: #0b4d70;
-    font-weight: 600;
-}
-
-.contact-block .value {
-    color: #2ea5dd;
-    font-weight: 700;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: 0.9375rem;
-}
-
-.contact-block .value:hover {
-    color: #0a609d;
-}
-
-/* Header Actions */
-.header-actions {
+.categories-nav {
     display: flex;
     align-items: center;
-    gap: 12px;
-}
-
-.action-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 16px;
-    background: white;
-    border: 2px solid #e5e7eb;
-    border-radius: 10px;
-    color: #374151;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.875rem;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.action-btn:hover {
-    border-color: #0a609d;
-    color: #0a609d;
-    background: #f0fdf4;
-    transform: translateY(-2px);
-}
-
-.action-btn i {
-    font-size: 1.125rem;
-}
-
-.wishlist-btn .badge {
-    position: absolute;
-    top: -6px;
-    right: -6px;
-    background: #ef4444;
-    color: white;
-    font-size: 0.625rem;
-    padding: 2px 6px;
-    border-radius: 10px;
-    font-weight: 700;
-}
-
-/* Main Navigation */
-.main-nav {
-    background: linear-gradient(135deg, #0a609d 0%, #084c74 100%);
-    position: relative;
-    z-index: 99;
-    box-shadow: 0 2px 8px rgba(10, 154, 115, 0.2);
-}
-
-.main-nav.is-sticky {
-    position: fixed;
-    top: 72px;
-    left: 0;
-    right: 0;
-    z-index: 999;
-}
-
-.nav-list {
-    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    min-height: 56px;
 }
 
-.nav-item {
-    position: relative;
+.category-link {
+    color: #171616;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    transition: color 0.2s ease;
 }
 
-.nav-link {
+.category-link:hover {
+    color: #95002a;
+}
+
+.header-nav {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 18px 20px;
-    color: white;
+}
+
+.header-nav .nav-link {
+    color: #171616;
     text-decoration: none;
-    font-size: 0.9375rem;
+    font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.3px;
-    transition: all 0.3s ease;
-    position: relative;
+    transition: color 0.2s ease;
 }
 
-.nav-link i {
-    font-size: 0.875rem;
-    opacity: 0.9;
-}
-
-.nav-link::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 3px;
-    background: white;
-    transition: width 0.3s ease;
-    border-radius: 2px 2px 0 0;
-}
-
-.nav-link:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.nav-link:hover::before,
-.nav-link.active::before {
-    width: 80%;
-}
-
-.nav-link.active {
-    background: rgba(255, 255, 255, 0.15);
-}
-
-/* Sticky state adjustment */
-body.has-sticky-header {
-    padding-top: 128px;
-}
-
-/* Responsive */
-@media (max-width: 1200px) {
-    .contact-blocks {
-        display: none;
-    }
-
-    .nav-link {
-        padding: 18px 16px;
-        font-size: 0.875rem;
-    }
+.header-nav .nav-link:hover,
+.header-nav .nav-link.active {
+    color: #95002a;
 }
 
 @media (max-width: 1024px) {
-    .logo-text {
-        display: none;
+    .logo {
+        height: 60px;
     }
-
-    .trust-badge {
-        display: none;
+    
+    .categories-nav {
+        gap: 2px;
     }
-
-    .nav-link span {
-        display: none;
+    
+    .category-link {
+        font-size: 12px;
+        padding: 6px 10px;
     }
-
-    .nav-link {
-        padding: 18px 14px;
-    }
-
-    .action-btn span {
-        display: none;
-    }
-
-    .action-btn {
-        padding: 10px 12px;
+    
+    .header-nav .nav-link {
+        font-size: 13px;
     }
 }
 

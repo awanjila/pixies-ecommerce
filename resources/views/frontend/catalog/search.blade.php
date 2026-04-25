@@ -1,11 +1,11 @@
 @extends('layouts.front_app')
 
 @section('title')
-wabegadgets | Electronics, Security & Smart Devices in Nairobi Ke
+Pixies Technologies | Electronics, Security & Smart Devices in Nairobi Ke
 
 @endsection
 
-@section('meta_title', 'wabegadgets provides reliable Electronics, Security & Smart Devices  in Nairobi, Kenya.')
+@section('meta_title', 'Pixies Technologies provides reliable Electronics, Security & Smart Devices  in Nairobi, Kenya.')
 
 @section('content')
 

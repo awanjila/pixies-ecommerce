@@ -5,9 +5,9 @@
         <div class="footer-grid">
           <!-- Company Info -->
           <div class="footer-col company-info">
-            <h3 class="footer-title">About Wabegadgets</h3>
+            <h3 class="footer-title">About Pixies Technologies</h3>
             <p class="company-desc">
-              WabeGadgets is your premier destination for top-tier security solutions. We specialize in CCTV systems, cloud storage solutions, professional installations, and cutting-edge smart home technology. Our commitment to security excellence makes us your trusted partner in protecting what matters most.
+              Your trusted destination for premium CCTV systems, security solutions, and smart home technology in Kenya. We specialize in professional installations and cutting-edge security equipment.
             </p>
             <div class="social-links">
               <a href="#" class="social-link" title="Facebook">
@@ -26,7 +26,7 @@
           <div class="footer-col">
             <h3 class="footer-title">Quick Links</h3>
             <ul class="footer-links">
-               <li><a href="/about/us">About Us</a></li>
+              <li><a href="/about/us">About Us</a></li>
               <li><a href="/contact/us">Contact Us</a></li>
               <li><a href="/faqs">FAQs</a></li>
               <li v-for="category in randomCategories" :key="category.id">
@@ -39,7 +39,6 @@
           <div class="footer-col">
             <h3 class="footer-title">Legal</h3>
             <ul class="footer-links">
-            
               <li><a href="/privacy/policy">Privacy Policy</a></li>
               <li><a href="/terms/conditions">Terms & Conditions</a></li>
               <li><a href="/shipping">Shipping Policy</a></li>
@@ -53,11 +52,11 @@
             <ul class="contact-info">
               <li>
                 <i class="fas fa-phone"></i>
-                <a href="tel:+254710909198">+254 710 909 198</a>
+                <a href="tel:+254798742543">+254 798 742 543</a>
               </li>
               <li>
                 <i class="fas fa-envelope"></i>
-                <a href="mailto:info@wabegadgets.co.ke">info@wabegadgets.co.ke</a>
+                <a href="mailto:info@pixies.co.ke">info@pixies.co.ke</a>
               </li>
               <li>
                 <i class="fas fa-map-marker-alt"></i>
@@ -74,10 +73,10 @@
       <div class="container">
         <div class="footer-bottom-content">
           <div class="copyright">
-            © {{ currentYear }} WabeGadgets. All rights reserved.
+            © {{ currentYear }} Pixies Technologies. All rights reserved.
           </div>
           <div class="developer-credit">
-            Crafted with <i class="fas fa-heart text-red-500"></i> by 
+            Powered by 
             <a href="https://www.wabestudio.co.ke" target="_blank" rel="noopener noreferrer">
               WabeStudio
             </a>
@@ -121,11 +120,11 @@ onMounted(() => {
 .site-footer {
   background-color: #171616;
   color: #ffffff;
-  font-size: 0.875rem;
 }
 
 .footer-main {
   padding: 3rem 0;
+  border-bottom: 1px solid #2a2a2a;
 }
 
 .container {
@@ -138,8 +137,6 @@ onMounted(() => {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 2rem;
-  border-bottom: 1px solid #2a2a2a;
-  padding-bottom: 2rem;
 }
 
 .footer-title {
@@ -170,6 +167,7 @@ onMounted(() => {
   justify-content: center;
   color: #ffffff;
   transition: all 0.2s ease;
+  text-decoration: none;
 }
 
 .social-link:hover {
@@ -283,4 +281,4 @@ onMounted(() => {
     text-align: center;
   }
 }
-</style> 
+</style>

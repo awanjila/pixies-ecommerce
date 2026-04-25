@@ -1,7 +1,7 @@
 @extends('layouts.front_app')
 
 @section('title')
-wabegadgets | Electronics, Security & Smart Devices in Nairobi Kenya
+Pixies Technologies | Electronics, Security & Smart Devices in Nairobi Kenya
 @endsection
 
 @section('content')

@@ -1,7 +1,7 @@
 <template>
     <div class="header-categories" v-if="showCategories">
       <div class="header-categories-header">
-        <img src="/front-assets/images/logos/logo-ft.png" alt="wabegadgets Tech" class="side-menu-logo" />
+        <img src="/front-assets/images/logos/logo-ft.png" alt="Pixies Technologies" class="side-menu-logo" />
         <button @click="toggleCategories" class="close-btn">
           <i class="fa fa-times"></i>
         </button>
@@ -29,7 +29,7 @@
 
         <!-- Phone number section -->
         <div class="phone-footer">
-          <p><strong>Phone:</strong> +254 710 909 198</p>
+          <p><strong>Phone:</strong> +254 798 742 543</p>
         </div>
       </div>
     </div>

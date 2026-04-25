@@ -15,7 +15,7 @@
         <button type="submit" class="tp-return-customer-btn tp-checkout-btn">Login</button>
         <br>
         <div class="tp-return-customer-forgot">
-            New to wabegadgetsTech? <a href="/register">Sign Up</a>
+            New to PixiesTech? <a href="/register">Sign Up</a>
         </div>
     </form>
 </template>

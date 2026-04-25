@@ -1,6 +1,6 @@
 @extends('layouts.admin_app')
 
-@section('title') Admin | Edit a Blog Post | wabegadgets @endsection
+@section('title') Admin | Edit a Blog Post | Pixies Technologies @endsection
 
 @section('content')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

@@ -1,7 +1,7 @@
 @extends('layouts.front_app')
 
 @section('title',
-'wabegadgets | Surgical Instruments · Medical Supplies · Hospital Equipment · Lab Consumables · Reliable Healthcare Solutions')
+'Pixies Technologies | Surgical Instruments · Medical Supplies · Hospital Equipment · Lab Consumables · Reliable Healthcare Solutions')
 
 @section('meta_title', 'Our Products · Surgical Instruments · Medical Supplies · Hospital Equipment · Lab Consumables · Trusted Healthcare Solutions')
 
@@ -14,7 +14,7 @@
                 <div class="accordion-header">Do you supply to individuals or only hospitals?</div>
                 <div class="accordion-content">
                     <p>We supply to both hospitals/clinics and individuals. Whether you need bulk purchases for your facility 
-                    or single items for personal use, wabegadgets is here to serve you.</p>
+                    or single items for personal use, Pixies Technologies is here to serve you.</p>
                 </div>
             </div>
             <div class="accordion-item">
@@ -56,7 +56,7 @@
                 <div class="accordion-header">How can I contact you for urgent orders?</div>
                 <div class="accordion-content">
                     <p>You can reach us directly via phone at +2547XXXXXXXX, by email at 
-                    support@wabegadgets.com, or through our social media platforms.</p>
+                    support@Pixies Technologies.com, or through our social media platforms.</p>
                 </div>
             </div>
         </div>

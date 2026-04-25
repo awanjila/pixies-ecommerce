@@ -44,7 +44,7 @@
     const whatsappMessage = `Hi, I'd like to order ${this.quantity} ${this.product.product_name}(s). Deliver to: ${this.deliveryLocation}. Total cost: ${this.totalPrice} KES. Order from: ${currentUrl}`;
 
     // Construct the WhatsApp link
-    const whatsappLink = `https://wa.me/+254710909198?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappLink = `https://wa.me/+254798742543?text=${encodeURIComponent(whatsappMessage)}`;
 
     // Open the WhatsApp link in a new window
     window.open(whatsappLink, '_blank');

@@ -1,6 +1,6 @@
 @extends('layouts.admin_app')
 
-@section('title') Admin |  Blog Coupons | wabegadgets   @endsection
+@section('title') Admin |  Blog Coupons | Pixies Technologies   @endsection
 
 @section('content')
 

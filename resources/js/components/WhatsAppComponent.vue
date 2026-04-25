@@ -28,8 +28,8 @@ export default {
       this.isMobile = window.innerWidth <= 768; // Adjust breakpoint as needed
     },
     sendMessage() {
-      const phoneNumber = '+254711682744';
-      const message = encodeURIComponent("Hi wabegadgets, I would like to know more about the products that you have.");
+      const phoneNumber = '+254798742543';
+      const message = encodeURIComponent("Hi Pixies Technologies, I would like to know more about the products that you have.");
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
       window.open(whatsappUrl, '_blank');
     }

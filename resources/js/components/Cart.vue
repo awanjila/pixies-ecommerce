@@ -1,138 +1,89 @@
 <template>
-  <!-- BREADCRUMB AREA START -->
-  <div class="ltn__breadcrumb-area text-left bg-overlay-white-30 bg-image" data-bs-bg="img/bg/14.jpg">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="ltn__breadcrumb-inner">
-            <h1 class="page-title">Cart</h1>
-            <div class="ltn__breadcrumb-list">
-              <ul>
-                <li><a href="/"><span class="ltn__secondary-color"><i class="fas fa-home"></i></span> Home</a></li>
-                <li>Cart</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="cart-page">
+    <div class="cart-header">
+      <h1 class="page-title">Shopping Cart</h1>
     </div>
-  </div>
-  <!-- BREADCRUMB AREA END -->
 
-  <!-- SHOPPING CART AREA START -->
-  <div class="liton__shoping-cart-area mb-120">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="shoping-cart-inner">
-            <div class="shoping-cart-table table-responsive">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th class="cart-product-remove">Remove</th>
-                    <th class="cart-product-image">Image</th>
-                    <th class="cart-product-info">Product</th>
-                    <th class="cart-product-price">Price</th>
-                    <th class="cart-product-quantity">Quantity</th>
-                    <th class="cart-product-subtotal">Subtotal</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="item in cart" :key="item.id">
-                    <td class="cart-product-remove">
-                      <a href="#" @click.prevent="removeFromCart(item.id)">x</a>
-                    </td>
-                    <td class="cart-product-image">
-                      <a href="#">
-                        <img :src="'/storage/' + item.product_image" :alt="item.product_name" @error="handleImageError">
-                      </a>
-                    </td>
-                    <td class="cart-product-info">
-                      <h4><a href="#">{{ item.product_name }}</a></h4>
-                    </td>
-                    <td class="cart-product-price">Ksh {{ item.selling_price }}.00</td>
-                    <td class="cart-product-quantity">
-                      <div class="custom-quantity-input">
-                        <button 
-                          type="button" 
-                          class="qty-btn minus" 
-                          @click="decrementQuantity(item.id)"
-                        >-</button>
-                        <input 
-                          type="number" 
-                          v-model.number="item.quantity" 
-                          @input="updateQuantity(item.id, $event.target.value)"
-                          min="1"
-                          class="qty-input"
-                        >
-                        <button 
-                          type="button" 
-                          class="qty-btn plus" 
-                          @click="incrementQuantity(item.id)"
-                        >+</button>
-                      </div>
-                    </td>
-                    <td class="cart-product-subtotal">Ksh {{ item.selling_price * item.quantity }}.00</td>
-                  </tr>
-                  <tr class="cart-coupon-row">
-                    <td colspan="6">
-                      <div class="cart-coupon">
-                        <input type="text" v-model="couponCode" name="cart-coupon" placeholder="Coupon code">
-                        <button type="submit" @click="applyCoupon" class="btn theme-btn-2 btn-effect-2">Apply Coupon</button>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+      <div v-if="cart.length === 0" class="empty-cart">
+        <p>Your cart is empty</p>
+        <a href="/" class="continue-shopping-btn">Continue Shopping</a>
+      </div>
+
+      <div v-else class="cart-content">
+        <div class="cart-table-wrapper">
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th class="col-product">Product</th>
+                <th class="col-price">Price</th>
+                <th class="col-quantity">Quantity</th>
+                <th class="col-subtotal">Subtotal</th>
+                <th class="col-remove"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in cart" :key="item.id">
+                <td class="col-product">
+                  <div class="product-info">
+                    <img :src="getImageUrl(item.product_image)" :alt="item.product_name" class="product-image">
+                    <div class="product-details">
+                      <h4>{{ item.product_name }}</h4>
+                    </div>
+                  </div>
+                </td>
+                <td class="col-price">Ksh {{ formatPrice(item.selling_price) }}</td>
+                <td class="col-quantity">
+                  <div class="quantity-controls">
+                    <button @click="decrementQuantity(item.id)" class="qty-btn">-</button>
+                    <span class="qty-value">{{ item.quantity }}</span>
+                    <button @click="incrementQuantity(item.id)" class="qty-btn">+</button>
+                  </div>
+                </td>
+                <td class="col-subtotal">Ksh {{ formatPrice(item.selling_price * item.quantity) }}</td>
+                <td class="col-remove">
+                  <button @click="removeFromCart(item.id)" class="remove-btn">&times;</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="cart-summary">
+          <div class="summary-card">
+            <h3>Cart Summary</h3>
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span>Ksh {{ formatPrice(cartTotal) }}</span>
             </div>
-            <div class="shoping-cart-total mt-50">
-              <h4>Cart Totals</h4>
-              <table class="table">
-                <tbody>
-                  <tr>
-                    <td>Cart Subtotal</td>
-                    <td>Ksh {{ cartTotal }}.00</td>
-                  </tr>
-                  
-                  <tr>
-                    <td><strong>Order Total</strong></td>
-                    <td><strong>Ksh {{ orderTotal }}.00</strong></td>
-                  </tr>
-                </tbody>
-              </table>
-              <div class="btn-wrapper text-right">
-                <a href="/checkout" class="theme-btn-1 btn btn-effect-1">Proceed to checkout</a>
-              </div>
+            <div class="summary-row total">
+              <span>Total</span>
+              <span>Ksh {{ formatPrice(cartTotal) }}</span>
             </div>
+            <a href="/checkout" class="checkout-btn">Proceed to Checkout</a>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- SHOPPING CART AREA END -->
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
-import { useCartStore } from '../store/cart';
 import { storeToRefs } from 'pinia';
+import { useCartStore } from '../store/cart';
 
 const cartStore = useCartStore();
 const { cart, cartTotal } = storeToRefs(cartStore);
-const couponCode = ref('');
-const shippingCost = ref(15);
 
-// Update VAT calculation to use the original cartTotal
-const calculateVAT = computed(() => {
-  return Math.round(cartStore.cartTotal * 0.16);
-});
+const formatPrice = (price) => {
+  return new Intl.NumberFormat('en-KE').format(price);
+};
 
-// Update orderTotal to use the original cartTotal
-const orderTotal = computed(() => {
-  return cartStore.cartTotal ;
-});
+const getImageUrl = (path) => {
+  if (!path) return '/images/placeholder.jpg';
+  return path.startsWith('/') ? path : '/' + path;
+};
 
-// Use the original store methods
 const incrementQuantity = (id) => {
   cartStore.incrementQuantityInCart(id);
 };
@@ -144,125 +95,262 @@ const decrementQuantity = (id) => {
 const removeFromCart = (id) => {
   cartStore.removeFromCart(id);
 };
-
-const applyCoupon = () => {
-  cartStore.applyCoupon(couponCode.value);
-};
-
-const updateQuantity = (id, value) => {
-  // Convert input to number and ensure it's at least 1
-  const newQuantity = Math.max(1, parseInt(value) || 1);
-  cartStore.updateQuantity(id, newQuantity);
-};
-
-const handleImageError = (e) => {
-  e.target.src = '/images/placeholder.jpg'; // Replace with your placeholder image path
-};
 </script>
 
 <style scoped>
-.cart-product-image img {
-  max-width: 80px;
+.cart-page {
+  min-height: 100vh;
 }
 
-.cart-coupon {
-  display: flex;
-  gap: 10px;
+.cart-header {
+  background: #171616;
+  padding: 2.5rem 0;
 }
 
-.cart-coupon input {
-  padding: 8px 15px;
-  border: 1px solid #ddd;
-  flex: 1;
-}
-
-.btn-wrapper {
-  margin-top: 20px;
-}
-
-.theme-btn-1,
-.theme-btn-2 {
-  padding: 8px 20px;
-  border: none;
-  cursor: pointer;
-}
-
-.cart-product-remove a {
-  color: #ff0000;
-  font-size: 20px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.shoping-cart-table th,
-.shoping-cart-table td {
-  vertical-align: middle;
-  text-align: center;
-}
-
-.cart-product-info h4 {
+.page-title {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
   margin: 0;
 }
 
-.cart-product-info a {
-  color: inherit;
-  text-decoration: none;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
-.custom-quantity-input {
-  position: relative;
-  width: 120px;
-  height: 40px;
-  border: 1px solid #ddd;
-  margin: 0 auto;
+.empty-cart {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.empty-cart p {
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.continue-shopping-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #171616;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.continue-shopping-btn:hover {
+  background: #95002a;
+}
+
+.cart-content {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 2rem;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.cart-table th {
+  font-weight: 600;
+  color: #666;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+.cart-table .col-remove {
+  width: 50px;
+  text-align: center;
+}
+
+.cart-table .col-price,
+.cart-table .col-subtotal {
+  text-align: right;
+  font-weight: 600;
+  color: #171616;
+}
+
+.product-info {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: #fff;
+  gap: 1rem;
+}
+
+.product-image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  background: #f9fafb;
+  padding: 0.5rem;
   border-radius: 4px;
 }
 
-.qty-input {
-  width: 40px;
-  height: 100%;
-  text-align: center;
-  border: none;
-  background: transparent;
-  padding: 0;
-  font-size: 16px;
+.product-details h4 {
   margin: 0;
-  -moz-appearance: textfield;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #171616;
 }
 
-.qty-input::-webkit-outer-spin-button,
-.qty-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
 }
 
 .qty-btn {
-  width: 40px;
-  height: 100%;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  background: none;
+  background: #ffffff;
   border: none;
-  font-size: 18px;
-  color: #333;
-  transition: all 0.3s ease;
-}
-
-.qty-btn.minus {
-  border-right: 1px solid #ddd;
-}
-
-.qty-btn.plus {
-  border-left: 1px solid #ddd;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
 }
 
 .qty-btn:hover {
-  background-color: #f5f5f5;
+  background: #f5f5f5;
+}
+
+.qty-value {
+  width: 40px;
+  text-align: center;
+  font-weight: 600;
+  border-left: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+  padding: 0.5rem 0;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.remove-btn:hover {
+  color: #95002a;
+}
+
+.summary-card {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.summary-card h3 {
+  margin: 0 0 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  color: #666;
+}
+
+.summary-row.total {
+  border-top: 1px solid #e5e5e5;
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #171616;
+}
+
+.checkout-btn {
+  display: block;
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: #95002a;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  transition: background 0.2s ease;
+}
+
+.checkout-btn:hover {
+  background: #7a0022;
+}
+
+@media (max-width: 1024px) {
+  .cart-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart-header {
+    padding: 1.5rem 0;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .cart-table thead {
+    display: none;
+  }
+
+  .cart-table,
+  .cart-table tbody,
+  .cart-table tr,
+  .cart-table td {
+    display: block;
+  }
+
+  .cart-table tr {
+    padding: 1rem 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .cart-table td {
+    padding: 0.5rem 0;
+    border: none;
+    text-align: left;
+  }
+
+  .cart-table .col-price,
+  .cart-table .col-subtotal {
+    text-align: left;
+  }
+
+  .product-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-image {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+  }
 }
 </style>

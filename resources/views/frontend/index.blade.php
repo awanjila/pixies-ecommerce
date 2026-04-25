@@ -14,6 +14,9 @@
     <!-- Featured Products -->
     <Products class="section-spacing"></Products>
 
+    <!-- Promo Section -->
+    <promo-section class="section-spacing"></promo-section>
+
     <!-- Trending Products -->
     <trending-products class="section-spacing"></trending-products>
 

@@ -1,16 +1,17 @@
 <template>
-  <!-- Cart Icon with Cart Length and Total Amount -->
-  <div class="mini-cart-icon mini-cart-icon-2" @click.stop="toggleCartDrawer">
-    <a class="ltn__utilize-toggle">
-      <span class="mini-cart-icon">
-        <i class="icon-shopping-cart"></i>
-        <sup>{{ cart ? cart.length : 0 }}</sup>
-      </span>
-      <h6 class="hidden md:block">
-        <span>Your Cart</span>
-        <span class="ltn__secondary-color">Ksh {{ cartTotal }}.00</span>
-      </h6>
-    </a>
+  <!-- Cart Icon -->
+  <div class="mini-cart-icon" @click.stop="toggleCartDrawer">
+    <span class="cart-icon-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 2 6 6"></path>
+        <path d="M6 8 17.92 8"></path>
+        <path d="M20 8-2.74 6.67A2 2 0 0 0 5 10v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2"></path>
+        <path d="M9 14h.01"></path>
+        <path d="M15 14h.01"></path>
+        <path d="M6 14a2 2 0 0 1 2-2h.5l-.5 4"></path>
+      </svg>
+    </span>
+    <span v-if="cart && cart.length > 0" class="cart-num">{{ cart.length }}</span>
   </div>
 
   <!-- CartDrawer component -->
@@ -80,6 +81,42 @@ watch(isCartDrawerOpen, (newValue) => {
 </script>
 
 <style scoped>
+.mini-cart-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #171616;
+}
+
+.cart-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-icon-wrap svg {
+  width: 20px;
+  height: 20px;
+}
+
+.cart-num {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #95002a;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .cart-overlay {
   position: fixed;
   top: 0;
@@ -88,21 +125,6 @@ watch(isCartDrawerOpen, (newValue) => {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9998;
-}
-
-@media (max-width: 767px) {
-  .mini-cart-icon-2 h6 {
-    display: none;
-  }
-}
-
-.mini-cart-icon {
-  cursor: pointer;
-}
-
-.mini-cart-icon-2 {
-  position: relative;
-  z-index: 1002; /* Ensure it's above other elements */
 }
 
 .ltn__utilize-open {

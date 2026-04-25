@@ -1,7 +1,7 @@
 <template>
   <div class="email-container">
     <div class="header">
-      <img :src="'/front-assets/img/brand-logo/logo.png'" alt="WabeGadgets Logo" class="logo">
+      <img :src="'/front-assets/img/brand-logo/logo.png'" alt="Pixies Technologies Logo" class="logo">
     </div>
 
     <div class="blog-content">
@@ -23,7 +23,7 @@
     </div>
 
     <div class="footer">
-      <p>© {{ currentYear }} wabegadgets. All rights reserved.</p>
+      <p>© {{ currentYear }} Pixies Technologies. All rights reserved.</p>
       <p>If you no longer wish to receive these emails, you can <a href="/unsubscribe">unsubscribe here</a></p>
     </div>
   </div>

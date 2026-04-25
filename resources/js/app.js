@@ -43,6 +43,7 @@ import TrendingProducts from './components/TrendingProducts.vue';
 import ContactForm from './components/ContactForm.vue';
 import WhatsAppButton from './components/WhatsAppButton.vue';
 import BrandCarousel from './components/BrandCarousel.vue'
+import PromoSection from './components/PromoSection.vue'
 import DesktopSearch from './components/DesktopSearch.vue'
 import MobileSearch from './components/MobileSearch.vue'
 import ProductDetail from './components/ProductDetail.vue';
@@ -128,6 +129,7 @@ app.component('blog-notification', BlogNotification);
 app.component('trending-products', TrendingProducts);
 app.component('contact-form', ContactForm)
 app.component('brand-carousel', BrandCarousel)
+app.component('promo-section', PromoSection)
 app.component('product-detail', ProductDetail)
 // app.component('site-footer', Footer)
 app.component('shipping-page', ShippingPage)

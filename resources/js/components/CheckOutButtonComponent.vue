@@ -55,7 +55,7 @@ function addToCart() {
 
 function shareOnWhatsapp() {
     const message = `Hi, I would like to order the ${props.productName}. Here is the link to the product: ${window.location.href}`;
-    const whatsappLink = `https://wa.me/+254710909198?text=${encodeURIComponent(message)}`;
+    const whatsappLink = `https://wa.me/+254798742543?text=${encodeURIComponent(message)}`;
     window.open(whatsappLink, '_blank');
 }
 </script>

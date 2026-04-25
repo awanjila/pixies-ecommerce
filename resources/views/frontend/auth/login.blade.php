@@ -1,7 +1,7 @@
 @extends('layouts.front_app')
 
 @section('title')
-Login | wabegadgets | Electronics, Security & Smart Devices
+Login | Pixies Technologies | Electronics, Security & Smart Devices
 @endsection
 
 @section('meta_title', 'Our Products · Electronics, Security & Smart Devices in Nairobi Kenya.')      
@@ -39,7 +39,7 @@ Login | wabegadgets | Electronics, Security & Smart Devices
                 <div class="col-xl-6 col-lg-8">
                     <div class="tp-login-wrapper">
                         <div class="tp-login-top text-center mb-30">
-                            <h3 class="tp-login-title">Login to wabegadgets.</h3>
+                            <h3 class="tp-login-title">Login to Pixies Technologies.</h3>
                             <p>Don’t have an account? <span><a href="{{route('client.register')}}">Create a free account</a></span></p>
                         </div>
                         <div class="tp-login-option">

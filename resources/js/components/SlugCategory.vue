@@ -350,6 +350,11 @@ onMounted(() => {
   margin-top: 2rem;
 }
 
+.page-numbers {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .page-btn {
   min-width: 2.5rem;
   height: 2.5rem;

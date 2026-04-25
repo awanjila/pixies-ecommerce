@@ -14,23 +14,39 @@
         <button @click="fetchBrands" class="retry-btn">Try Again</button>
       </div>
 
-      <div v-else-if="brands.length > 0" class="brands-grid">
-        <div v-for="brand in brands" :key="brand.id" class="brand-card">
-          <a :href="`/products?brand=${brand.id}`" class="brand-link">
-            <div class="brand-image-wrapper">
-              <img 
-                :src="getBrandImageUrl(brand.brand_image)" 
-                :alt="brand.name"
-                @error="handleImageError"
-                class="brand-image"
-                loading="lazy"
-              />
+      <div v-else-if="brands.length > 0" class="carousel-wrapper">
+        <button class="carousel-arrow prev-arrow" @click="scrollCarousel('prev')" aria-label="Previous">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        
+        <div class="carousel-container" ref="carouselContainer">
+          <div class="carousel-track">
+            <div v-for="brand in brands" :key="brand.id" class="brand-card">
+              <a :href="`/products?brand=${brand.id}`" class="brand-link">
+                <div class="brand-image-wrapper">
+                  <img 
+                    :src="getBrandImageUrl(brand.brand_image)" 
+                    :alt="brand.name"
+                    @error="handleImageError"
+                    class="brand-image"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="brand-name" v-if="brand.name">
+                  {{ brand.name }}
+                </div>
+              </a>
             </div>
-            <div class="brand-name" v-if="brand.name">
-              {{ brand.name }}
-            </div>
-          </a>
+          </div>
         </div>
+        
+        <button class="carousel-arrow next-arrow" @click="scrollCarousel('next')" aria-label="Next">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
       </div>
 
       <div v-else class="state-container">
@@ -74,6 +90,17 @@ export default {
         },
         handleImageError(e) {
             e.target.src = '/front-assets/img/brand-logo/logo.png';
+        },
+        scrollCarousel(direction) {
+            const container = this.$refs.carouselContainer;
+            if (!container) return;
+            
+            const cardWidth = container.querySelector('.brand-card')?.offsetWidth || 200;
+            const gap = 18;
+            const scrollAmount = direction === 'next' 
+                ? cardWidth + gap 
+                : -(cardWidth + gap);
+            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         }
     }
 };
@@ -83,10 +110,11 @@ export default {
 .brand-section {
   padding: 3rem 0;
   background: #ffffff;
+  width: 100%;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -102,16 +130,45 @@ export default {
   margin: 0;
 }
 
-.brands-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1px;
-  background: #e5e5e5;
-  border: 1px solid #e5e5e5;
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-container {
+  flex: 1;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  margin: 0 44px;
+  padding: 4px 0;
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 18px;
 }
 
 .brand-card {
+  flex: 0 0 180px;
+  scroll-snap-align: start;
+  border: 1px solid #e5e5e5;
   background: #ffffff;
+  border-radius: 8px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.brand-card:hover {
+  border-color: #95002a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .brand-link {
@@ -122,16 +179,16 @@ export default {
 }
 
 .brand-image-wrapper {
-  padding: 1.5rem;
+  padding: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 120px;
+  min-height: 100px;
 }
 
 .brand-image {
   max-width: 100%;
-  max-height: 60px;
+  max-height: 50px;
   object-fit: contain;
   filter: grayscale(100%);
   transition: filter 0.2s ease;
@@ -142,16 +199,48 @@ export default {
 }
 
 .brand-name {
-  padding: 0.75rem;
+  padding: 0.625rem;
   text-align: center;
   font-weight: 600;
   color: #171616;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   border-top: 1px solid #e5e5e5;
 }
 
 .brand-card:hover .brand-name {
   color: #95002a;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+  color: #171616;
+}
+
+.carousel-arrow:hover {
+  background: #95002a;
+  border-color: #95002a;
+  color: #fff;
+}
+
+.prev-arrow {
+  left: 0;
+}
+
+.next-arrow {
+  right: 0;
 }
 
 .state-container {
@@ -182,21 +271,18 @@ export default {
   background: #f5f5f5;
 }
 
-@media (max-width: 1024px) {
-  .brands-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
 @media (max-width: 768px) {
-  .brands-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .carousel-container {
+    margin: 0 36px;
   }
-}
-
-@media (max-width: 540px) {
-  .brands-grid {
-    grid-template-columns: repeat(2, 1fr);
+  
+  .carousel-arrow {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .brand-card {
+    flex: 0 0 150px;
   }
 }
 </style>

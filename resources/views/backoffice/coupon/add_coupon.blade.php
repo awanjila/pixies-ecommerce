@@ -1,7 +1,7 @@
 @extends('layouts.admin_app')
 
 @section('title')
-    @section('title') Admin | Add a Coupon | wabegadgets  @endsection
+    @section('title') Admin | Add a Coupon | Pixies Technologies  @endsection
 
 @section('content')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

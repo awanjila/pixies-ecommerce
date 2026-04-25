@@ -1,5 +1,5 @@
 <template>
-    <a href="https://wa.me/254711682744" 
+    <a href="https://wa.me/254798742543" 
        target="_blank" 
        class="whatsapp-button"
        title="Chat with us on WhatsApp">

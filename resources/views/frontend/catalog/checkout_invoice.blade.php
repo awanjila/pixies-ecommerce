@@ -1,8 +1,8 @@
 @extends('layouts.front_app')
 
-@section('title', 'Unpaid Invoice | wabegadgets')
+@section('title', 'Unpaid Invoice | Pixies Technologies')
 
-@section('meta_title', 'Unpaid Invoice | wabegadgets')
+@section('meta_title', 'Unpaid Invoice | Pixies Technologies')
 
 @push('styles')
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">

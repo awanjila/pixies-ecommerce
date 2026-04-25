@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Thank you for contacting wabegadgets</title>
+    <title>Thank you for contacting Pixies Technologies</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -32,10 +32,10 @@
 <body>
     <div class="container">
         <div class="logo">
-            <img src="{{ asset('front-assets/img/brand-logo/logo.png') }}" alt="wabegadgets Logo">
+            <img src="{{ asset('front-assets/img/brand-logo/logo.png') }}" alt="Pixies Technologies Logo">
         </div>
 
-        <h2>Thank you for contacting wabegadgets</h2>
+        <h2>Thank you for contacting Pixies Technologies</h2>
 
         <p>Dear {{ $data['name'] }},</p>
 
@@ -45,13 +45,13 @@
         <blockquote>
             {{ $data['message'] }}
         </blockquote>
-        <p>If you have any further questions or need immediate assistance, please feel free to contact us at <a href="mailto:support@wabegadgets.com">support@wabegadgets.com</a>.</p>
-        <p>Best regards,<br>The wabegadgets Team</p>
+        <p>If you have any further questions or need immediate assistance, please feel free to contact us at <a href="mailto:info@pixies.co.ke">info@pixies.co.ke</a>.</p>
+        <p>Best regards,<br>The Pixies Technologies Team</p>
 
         <div class="footer">
-            <p>© {{ date('Y') }} wabegadgets. All rights reserved.</p>
+            <p>© {{ date('Y') }} Pixies Technologies. All rights reserved.</p>
             <p>#</p>
-            <p>Tel: +254 711 682 744 | Email: support@wabegadgets.com</p>
+            <p>Tel: +254 798 742 543 | Email: info@pixies.co.ke</p>
         </div>
     </div>
 </body>

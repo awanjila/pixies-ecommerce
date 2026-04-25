@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quotation | wabegadgets</title>
+    <title>Quotation | Pixies Technologies</title>
     <style>
         /* Modern styles for the email */
         body {
@@ -162,7 +162,7 @@
 
     <div class="about-us">
     <h4>About Us</h4>
-    <p>Discover top-quality Surgical Instruments, Medical Supplies, and Healthcare Solutions at wabegadgets. From surgical tools to hospital equipment, we are your trusted healthcare partner in Kenya. Shop with us for innovation and reliability!</p>
+    <p>Discover top-quality Surgical Instruments, Medical Supplies, and Healthcare Solutions at Pixies Technologies. From surgical tools to hospital equipment, we are your trusted healthcare partner in Kenya. Shop with us for innovation and reliability!</p>
     <div class="social-links">
         <a href="https://www.facebook.com/wabegadgets" target="_blank"><img src="facebook_icon.png" alt="Facebook"></a>
         <a href="https://www.instagram.com/wabegadgets" target="_blank"><img src="instagram_icon.png" alt="Instagram"></a>

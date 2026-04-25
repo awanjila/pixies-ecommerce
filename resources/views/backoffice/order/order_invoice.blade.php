@@ -73,11 +73,9 @@
 <body>
 <div style="text-align: center;">
     <div >
-        <h1 class="title"><strong>wabegadgets</strong>  </h1>
-        <span>Surgical Instruments, Medical Supplies, Healthcare Solutions</span>
+<h1 class="title"><strong>Pixies Technologies</strong>  </h1>
 
-        <p> TEL: +254 711 682 744</p>
-        <p> info@wabegadgets.com</p>
+        <p> info@pixies.co.ke</p>
         <p>Receipt No. : {{$order->invoice_no}}</p>
         <h1> CASH SALE</h1>
         <p>DATE: {{$order->order_date}}</p>

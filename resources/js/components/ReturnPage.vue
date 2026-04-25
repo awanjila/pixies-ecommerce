@@ -1,10 +1,10 @@
 <template>
   <div class="min-h-screen bg-gray-50">
     <!-- Header -->
-    <div class="bg-gradient-to-r from-[#084c74] to-[#0a5d8a] text-white py-16 px-4">
+    <div class="bg-gradient-to-r from-[#171616] to-[#171616] text-white py-16 px-4">
       <div class="max-w-4xl mx-auto">
         <h1 class="text-4xl font-bold mb-4">Returns & Refund Policy</h1>
-        <p class="text-blue-50 text-lg">Wabegadgets - Committed to Your Satisfaction</p>
+        <p class="text-white text-lg">Pixies Technologies - Committed to Your Satisfaction</p>
       </div>
     </div>
 
@@ -14,7 +14,7 @@
       <!-- Introduction -->
       <div class="bg-white rounded-lg shadow-md p-8 mb-8">
         <p class="text-gray-700 leading-relaxed">
-          At Wabegadgets, we want you to be completely satisfied with your purchase. We understand that sometimes 
+          At Pixies Technologies, we want you to be completely satisfied with your purchase. We understand that sometimes 
           products may not meet your expectations or technical requirements. We have established the following 
           return and refund policy to ensure a fair and transparent process for all our customers.
         </p>
@@ -23,15 +23,15 @@
       <!-- Return Window -->
       <div class="bg-white rounded-lg shadow-md p-8 mb-8">
         <div class="flex items-start mb-4">
-          <div class="bg-[#084c74]/10 rounded-full p-3 mr-4">
-            <svg class="w-6 h-6 text-[#084c74]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="bg-[#171616]/10 rounded-full p-3 mr-4">
+            <svg class="w-6 h-6 text-[#171616]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
           <div>
             <h2 class="text-2xl font-bold text-gray-900 mb-3">Return Window</h2>
             <p class="text-gray-700 mb-2">
-              <span class="font-semibold text-[#084c74]">7-Day Return Period:</span> Returns must be initiated within 
+              <span class="font-semibold text-[#171616]">7-Day Return Period:</span> Returns must be initiated within 
               7 days of delivery for eligible items.
             </p>
             <p class="text-gray-600 text-sm">
@@ -44,8 +44,8 @@
       <!-- Eligible Returns -->
       <div class="bg-white rounded-lg shadow-md p-8 mb-8">
         <div class="flex items-start mb-4">
-          <div class="bg-[#084c74]/10 rounded-full p-3 mr-4">
-            <svg class="w-6 h-6 text-[#084c74]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="bg-[#171616]/10 rounded-full p-3 mr-4">
+            <svg class="w-6 h-6 text-[#171616]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
@@ -53,27 +53,27 @@
             <h2 class="text-2xl font-bold text-gray-900 mb-4">Eligible for Return</h2>
             <ul class="space-y-3">
               <li class="flex items-start">
-                <span class="text-[#084c74] mr-2 mt-1">•</span>
+                <span class="text-[#171616] mr-2 mt-1">•</span>
                 <span class="text-gray-700">Items received damaged or defective</span>
               </li>
               <li class="flex items-start">
-                <span class="text-[#084c74] mr-2 mt-1">•</span>
+                <span class="text-[#171616] mr-2 mt-1">•</span>
                 <span class="text-gray-700">Incorrect items shipped (wrong product, model, or quantity)</span>
               </li>
               <li class="flex items-start">
-                <span class="text-[#084c74] mr-2 mt-1">•</span>
+                <span class="text-[#171616] mr-2 mt-1">•</span>
                 <span class="text-gray-700">Products in original, unopened, and sealed packaging</span>
               </li>
               <li class="flex items-start">
-                <span class="text-[#084c74] mr-2 mt-1">•</span>
+                <span class="text-[#171616] mr-2 mt-1">•</span>
                 <span class="text-gray-700">Items with all original accessories, manuals, and documentation</span>
               </li>
               <li class="flex items-start">
-                <span class="text-[#084c74] mr-2 mt-1">•</span>
+                <span class="text-[#171616] mr-2 mt-1">•</span>
                 <span class="text-gray-700">Unused devices with manufacturer's seal and warranty stickers intact</span>
               </li>
               <li class="flex items-start">
-                <span class="text-[#084c74] mr-2 mt-1">•</span>
+                <span class="text-[#171616] mr-2 mt-1">•</span>
                 <span class="text-gray-700">Products with valid proof of purchase (receipt or invoice)</span>
               </li>
             </ul>
@@ -137,28 +137,28 @@
         <h2 class="text-2xl font-bold text-gray-900 mb-6">How to Initiate a Return</h2>
         <div class="space-y-4">
           <div class="flex items-start">
-            <div class="bg-[#084c74] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">1</div>
+            <div class="bg-[#171616] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">1</div>
             <div>
               <h3 class="font-semibold text-gray-900 mb-1">Contact Us</h3>
-              <p class="text-gray-700">Call us at <a href="tel:+254710909198" class="text-[#084c74] font-semibold hover:underline">+254 710 909 198</a> within 7 days of delivery</p>
+              <p class="text-gray-700">Call us at <a href="tel:+254798742543" class="text-[#171616] font-semibold hover:text-[#95002a]">+254 798 742 543</a> within 7 days of delivery</p>
             </div>
           </div>
           <div class="flex items-start">
-            <div class="bg-[#084c74] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">2</div>
+            <div class="bg-[#171616] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">2</div>
             <div>
               <h3 class="font-semibold text-gray-900 mb-1">Provide Details</h3>
               <p class="text-gray-700">Share your order number, product details, serial number/IMEI, and reason for return. Photos are required for damaged items</p>
             </div>
           </div>
           <div class="flex items-start">
-            <div class="bg-[#084c74] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">3</div>
+            <div class="bg-[#171616] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">3</div>
             <div>
               <h3 class="font-semibold text-gray-900 mb-1">Receive Authorization</h3>
               <p class="text-gray-700">Our team will review your request and provide a Return Authorization (RA) number if approved</p>
             </div>
           </div>
           <div class="flex items-start">
-            <div class="bg-[#084c74] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">4</div>
+            <div class="bg-[#171616] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">4</div>
             <div>
               <h3 class="font-semibold text-gray-900 mb-1">Ship the Item</h3>
               <p class="text-gray-700">Package the item securely in its original packaging with all accessories and ship to the address provided with your RA number</p>
@@ -176,8 +176,8 @@
       <!-- Refund Information -->
       <div class="bg-white rounded-lg shadow-md p-8 mb-8">
         <div class="flex items-start mb-4">
-          <div class="bg-[#084c74]/10 rounded-full p-3 mr-4">
-            <svg class="w-6 h-6 text-[#084c74]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="bg-[#171616]/10 rounded-full p-3 mr-4">
+            <svg class="w-6 h-6 text-[#171616]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
           </div>
@@ -216,18 +216,18 @@
       <div class="bg-white rounded-lg shadow-md p-8 mb-8">
         <h2 class="text-2xl font-bold text-gray-900 mb-4">Warranty vs. Returns</h2>
         <div class="grid md:grid-cols-2 gap-6">
-          <div class="border-2 border-[#084c74]/30 rounded-lg p-4">
+          <div class="border-2 border-[#171616]/30 rounded-lg p-4">
             <h3 class="font-semibold text-gray-900 mb-2 flex items-center">
-              <svg class="w-5 h-5 text-[#084c74] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-[#171616] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               Returns (7 Days)
             </h3>
             <p class="text-gray-700 text-sm">For change of mind, wrong purchase, or immediate defects. Item must be unused and in original packaging.</p>
           </div>
-          <div class="border-2 border-[#084c74]/30 rounded-lg p-4">
+          <div class="border-2 border-[#171616]/30 rounded-lg p-4">
             <h3 class="font-semibold text-gray-900 mb-2 flex items-center">
-              <svg class="w-5 h-5 text-[#084c74] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-[#171616] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
               Warranty Claims
@@ -255,7 +255,7 @@
       </div>
 
       <!-- Contact Section -->
-      <div class="bg-gradient-to-r from-[#084c74] to-[#0a5d8a] text-white rounded-lg p-8">
+      <div class="bg-gradient-to-r from-[#171616] to-[#171616] text-white rounded-lg p-8">
         <h2 class="text-2xl font-bold mb-4">Questions About Returns?</h2>
         <p class="mb-6">Our customer service team is here to help you with any questions or concerns.</p>
         <div class="space-y-3">
@@ -263,16 +263,16 @@
             <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
-            <a href="tel:+254710909198" class="hover:text-blue-200">+254 710 909 198</a>
+            <a href="tel:+254798742543" class="hover:text-gray-300">+254 798 742 543</a>
           </div>
           <div class="flex items-center">
             <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
             </svg>
-            <span>wabegadgets.co.ke</span>
+            <span>pixies.co.ke</span>
           </div>
         </div>
-        <p class="mt-6 text-sm text-blue-100">
+        <p class="mt-6 text-sm text-gray-400">
           Business Hours: Monday - Friday, 8:00 AM - 6:00 PM | Saturday, 9:00 AM - 3:00 PM
         </p>
       </div>
@@ -280,7 +280,7 @@
       <!-- Footer Note -->
       <div class="mt-8 text-center text-gray-600 text-sm">
         <p>Last Updated: December 2025</p>
-        <p class="mt-2">Wabegadgets reserves the right to update this policy. Changes will be communicated on our website.</p>
+        <p class="mt-2">Pixies Technologies reserves the right to update this policy. Changes will be communicated on our website.</p>
       </div>
 
     </div>

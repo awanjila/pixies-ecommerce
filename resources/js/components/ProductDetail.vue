@@ -131,14 +131,14 @@
                 <i class="fas fa-phone"></i>
                 <div class="contact-details">
                   <span class="contact-label">Need Help?</span>
-                  <a href="tel:+254710909198" class="contact-value">+254 710 909 198</a>
+                  <a href="tel:+254798742543" class="contact-value">+254 798 742 543</a>
                 </div>
               </div>
               <div class="contact-info">
                 <i class="fas fa-envelope"></i>
                 <div class="contact-details">
                   <span class="contact-label">Email Us</span>
-                  <a href="mailto:info@wabegadgets.co.ke" class="contact-value">info@wabegadgets.co.ke</a>
+                  <a href="mailto:info@pixies.co.ke" class="contact-value">info@pixies.co.ke</a>
                 </div>
               </div>
             </div>

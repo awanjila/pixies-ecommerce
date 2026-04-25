@@ -117,7 +117,7 @@ export default {
             loading: true,
             error: null,
             currentDot: 0,
-            productsPerSlide: 6
+            productsPerSlide: 4
         }
     },
     computed: {
@@ -235,14 +235,15 @@ export default {
 
 <style scoped>
 .trending-section {
-    padding: 56px 0;
+    padding: 2.5rem 0;
     background: #fff;
+    width: 100%;
 }
 
 .container {
-    max-width: 1280px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 1rem;
 }
 
 .section-header {
@@ -263,12 +264,12 @@ export default {
 .view-all-link {
     color: #171616;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 600;
 }
 
 .view-all-link:hover {
-    text-decoration: underline;
+    color: #95002a;
 }
 
 .carousel-wrapper {
@@ -304,17 +305,17 @@ export default {
     flex-direction: column;
     border: 1px solid #e5e5e5;
     background: #fff;
-    border-radius: 12px;
-    padding: 16px;
+    border-radius: 8px;
+    padding: 0.75rem;
     overflow: hidden;
     transition: box-shadow 0.2s ease, border-color 0.2s ease;
     scroll-snap-align: start;
-    flex: 0 0 calc((100% - (5 * 18px)) / 6);
-    min-width: calc((100% - (5 * 18px)) / 6);
+    flex: 0 0 calc((100% - (3 * 18px)) / 4);
+    min-width: calc((100% - (3 * 18px)) / 4);
 }
 
 .product-card:hover {
-    border-color: #d9d9d9;
+    border-color: #95002a;
     box-shadow: 0 8px 20px rgba(23, 22, 22, 0.08);
 }
 
@@ -361,7 +362,7 @@ export default {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    border: 1px solid #95002a;
+    border: 1px solid #171616;
     background: transparent;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -370,18 +371,20 @@ export default {
 
 .dot.active {
     background: #95002a;
+    border-color: #95002a;
 }
 
 .dot:hover {
     background: #95002a;
+    border-color: #95002a;
 }
 
 .product-image-link {
     position: relative;
     display: block;
-    height: 215px;
-    padding: 14px;
-    background: #fff;
+    height: 240px;
+    padding: 0.5rem;
+    background: #f9fafb;
 }
 
 .product-img {
@@ -394,10 +397,10 @@ export default {
     position: absolute;
     top: 10px;
     left: 10px;
-    background: #171616;
+    background: #95002a;
     color: #fff;
     padding: 4px 8px;
-    border-radius: 999px;
+    border-radius: 4px;
     font-size: 0.75rem;
     font-weight: 600;
 }
@@ -405,18 +408,18 @@ export default {
 .product-info {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 14px;
+    gap: 0.5rem;
+    padding: 0.75rem;
     border-top: 1px solid #e5e5e5;
     flex: 1;
 }
 
 .product-title {
     margin: 0;
-    font-size: 0.92rem;
-    font-weight: 600;
-    line-height: 1.45;
-    min-height: 2.7em;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    line-height: 1.4;
+    min-height: 2.8em;
     color: #171616;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -441,34 +444,34 @@ export default {
 }
 
 .current-price {
-    font-size: 1.05rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
     color: #171616;
 }
 
 .original-price {
-    font-size: 0.85rem;
-    color: #666;
+    font-size: 0.875rem;
+    color: #999;
     text-decoration: line-through;
 }
 
 .add-to-cart-btn {
     margin-top: auto;
     width: 100%;
-    border: 1px solid #e5e5e5;
-    background: #fff;
+    border: 1px solid #171616;
+    background: #ffffff;
     color: #171616;
-    border-radius: 6px;
-    padding: 10px;
-    font-size: 14px;
+    border-radius: 4px;
+    padding: 0.625rem 1rem;
+    font-size: 0.8125rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .add-to-cart-btn:hover {
-    background: #fafafa;
-    border-color: #d9d9d9;
+    background: #171616;
+    color: #ffffff;
 }
 
 .state-container {
@@ -503,15 +506,15 @@ export default {
 
 @media (max-width: 1200px) {
     .product-card {
-        flex: 0 0 calc((100% - (3 * 18px)) / 4);
-        min-width: calc((100% - (3 * 18px)) / 4);
+        flex: 0 0 calc((100% - (2 * 18px)) / 3);
+        min-width: calc((100% - (2 * 18px)) / 3);
     }
 }
 
 @media (max-width: 992px) {
     .product-card {
-        flex: 0 0 calc((100% - (2 * 18px)) / 3);
-        min-width: calc((100% - (2 * 18px)) / 3);
+        flex: 0 0 calc((100% - 18px) / 2);
+        min-width: calc((100% - 18px) / 2);
     }
 }
 

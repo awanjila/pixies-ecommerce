@@ -3,7 +3,7 @@
     <div class="menu-header">
       <h3 class="menu-title">
         
-        Categories
+        Categor
       </h3>
     </div>
     <ul class="category-list">

@@ -1,11 +1,11 @@
 <template>
   <div class="min-h-screen bg-gray-50">
     <!-- Header -->
-    <div class="bg-gradient-to-r from-[#084c74] to-[#0a5d8a] text-white py-16 px-4">
+    <div class="bg-gradient-to-r from-[#171616] to-[#171616] text-white py-16 px-4">
       <div class="max-w-5xl mx-auto">
         <h1 class="text-4xl font-bold mb-4">Terms & Conditions</h1>
-        <p class="text-blue-50 text-lg">Wabegadgets - Legal Terms of Use</p>
-        <p class="text-blue-100 text-sm mt-2">Effective Date: December 24, 2024</p>
+        <p class="text-white text-lg">Pixies Technologies - Legal Terms of Use</p>
+        <p class="text-gray-400 text-sm mt-2">Effective Date: December 24, 2024</p>
       </div>
     </div>
 
@@ -16,18 +16,18 @@
       <div class="bg-white rounded-lg shadow-md p-8 mb-8">
         <h2 class="text-2xl font-bold text-gray-900 mb-4">1. Introduction & Acceptance</h2>
         <p class="text-gray-700 leading-relaxed mb-4">
-          Welcome to Wabegadgets ("we," "us," "our," or "Wabegadgets"). These Terms and Conditions 
-          ("Terms") govern your access to and use of our website at wabegadgets.co.ke (the "Website") and the 
+          Welcome to Pixies Technologies ("we," "us," "our," or "Pixies Technologies"). These Terms and Conditions 
+          ("Terms") govern your access to and use of our website at pixies.co.ke (the "Website") and the 
           purchase of technology products, electronics, and gadgets through our platform.
         </p>
         <p class="text-gray-700 leading-relaxed mb-4">
           By accessing or using our Website, placing an order, or purchasing any products, you agree to be bound by 
           these Terms. If you do not agree to these Terms, you must not use our Website or services.
         </p>
-        <div class="bg-blue-50 border-l-4 border-[#084c74] p-4 mt-4">
+        <div class="bg-blue-50 border-l-4 border-[#171616] p-4 mt-4">
           <p class="text-gray-900 font-semibold">
             Please read these Terms carefully before using our services. These Terms constitute a legally binding 
-            agreement between you and Wabegadgets.
+            agreement between you and Pixies Technologies.
           </p>
         </div>
       </div>
@@ -148,7 +148,7 @@
 
         <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">4.3 Authenticity Guarantee</h3>
         <p class="text-gray-700">
-          All products sold on Wabegadgets are 100% genuine and sourced from authorized distributors. We do not sell 
+          All products sold on Pixies Technologies are 100% genuine and sourced from authorized distributors. We do not sell 
           counterfeit or imitation products. If you receive a counterfeit item, please contact us immediately for 
           a full refund and investigation.
         </p>
@@ -161,7 +161,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">5.1 Product Use & Responsibility</h3>
         <div class="bg-white p-4 rounded mb-4">
           <p class="text-gray-800 mb-3 font-semibold">
-            IMPORTANT: You are responsible for proper use of all products purchased from Wabegadgets.
+            IMPORTANT: You are responsible for proper use of all products purchased from Pixies Technologies.
           </p>
           <ul class="space-y-2 ml-6">
             <li class="text-gray-700">• Always read and follow manufacturer instructions carefully</li>
@@ -176,7 +176,7 @@
         <div class="bg-white p-4 rounded mb-4">
           <p class="text-gray-800 font-semibold mb-3">TO THE MAXIMUM EXTENT PERMITTED BY LAW:</p>
           <ul class="space-y-2 ml-6">
-            <li class="text-gray-700">• Wabegadgets is not liable for any indirect, incidental, or consequential damages</li>
+            <li class="text-gray-700">• Pixies Technologies is not liable for any indirect, incidental, or consequential damages</li>
             <li class="text-gray-700">• Our total liability shall not exceed the purchase price of the product in question</li>
             <li class="text-gray-700">• We are not liable for data loss, business interruption, or lost profits</li>
             <li class="text-gray-700">• We are not liable for losses due to product unavailability or delivery delays</li>
@@ -236,7 +236,7 @@
         <h2 class="text-2xl font-bold text-gray-900 mb-4">8. Intellectual Property</h2>
         <p class="text-gray-700 mb-4">
           All content on this Website, including text, graphics, logos, images, product descriptions, and software, 
-          is the property of Wabegadgets or its licensors and is protected by Kenyan and international 
+          is the property of Pixies Technologies or its licensors and is protected by Kenyan and international 
           intellectual property laws.
         </p>
         <ul class="space-y-2 ml-6">
@@ -259,12 +259,12 @@
           <li class="text-gray-700">• Your data is stored securely and not shared without consent</li>
           <li class="text-gray-700">• You have rights to access, correct, and delete your personal data</li>
           <li class="text-gray-700">• We use cookies to improve your browsing experience</li>
-          <li class="text-gray-700">• Contact us at +254 710 909 198 for data protection inquiries</li>
+          <li class="text-gray-700">• Contact us at +254 798 742 543 for data protection inquiries</li>
         </ul>
       </div>
 
       <!-- Governing Law - CRITICAL -->
-      <div class="bg-gradient-to-r from-[#084c74] to-[#0a5d8a] text-white rounded-lg p-8 mb-8">
+      <div class="bg-gradient-to-r from-[#171616] to-[#171616] text-white rounded-lg p-8 mb-8">
         <h2 class="text-2xl font-bold mb-4">10. Governing Law & Jurisdiction</h2>
         
         <h3 class="text-xl font-semibold mb-3 mt-6">10.1 Applicable Law</h3>
@@ -287,7 +287,7 @@
         <h3 class="text-xl font-semibold mb-3 mt-6">10.3 Dispute Resolution</h3>
         <p class="mb-3">In the event of a dispute:</p>
         <ul class="space-y-2 ml-6">
-          <li>• Contact us first at +254 710 909 198 to resolve the matter amicably</li>
+          <li>• Contact us first at +254 798 742 543 to resolve the matter amicably</li>
           <li>• We encourage mediation before litigation</li>
           <li>• Legal proceedings must be initiated in Nairobi, Kenya</li>
         </ul>
@@ -297,7 +297,7 @@
       <div class="bg-white rounded-lg shadow-md p-8 mb-8">
         <h2 class="text-2xl font-bold text-gray-900 mb-4">11. Indemnification</h2>
         <p class="text-gray-700 mb-4">
-          You agree to indemnify and hold harmless Wabegadgets, its owners, employees, and agents from any 
+          You agree to indemnify and hold harmless Pixies Technologies, its owners, employees, and agents from any 
           claims, damages, losses, liabilities, and expenses (including legal fees) arising from:
         </p>
         <ul class="space-y-2 ml-6">
@@ -358,13 +358,13 @@
         <h2 class="text-2xl font-bold text-gray-900 mb-4">15. Entire Agreement</h2>
         <p class="text-gray-700">
           These Terms, together with our Privacy Policy, Return Policy, and Shipping Policy, constitute the entire 
-          agreement between you and Wabegadgets regarding your use of our Website and services, and supersede all 
+          agreement between you and Pixies Technologies regarding your use of our Website and services, and supersede all 
           prior agreements and understandings.
         </p>
       </div>
 
       <!-- Contact Information -->
-      <div class="bg-gradient-to-r from-[#084c74] to-[#0a5d8a] text-white rounded-lg p-8">
+      <div class="bg-gradient-to-r from-[#171616] to-[#171616] text-white rounded-lg p-8">
         <h2 class="text-2xl font-bold mb-4">16. Contact Information</h2>
         <p class="mb-6">
           For questions about these Terms & Conditions, please contact us:
@@ -374,16 +374,16 @@
             <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
-            <a href="tel:+254710909198" class="hover:text-blue-200">+254 710 909 198</a>
+            <a href="tel:+254798742543" class="hover:text-blue-200">+254 798 742 543</a>
           </div>
           <div class="flex items-center">
             <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
             </svg>
-            <span>wabegadgets.co.ke</span>
+            <span>pixies.co.ke</span>
           </div>
         </div>
-        <p class="mt-6 text-sm text-blue-100">
+        <p class="mt-6 text-sm text-gray-400">
           Business Hours: Monday - Friday, 8:00 AM - 6:00 PM | Saturday, 9:00 AM - 3:00 PM
         </p>
       </div>
@@ -397,7 +397,7 @@
           By using our Website or services, you acknowledge that you have read, understood, and agree to be bound by these Terms.
         </p>
         <p class="text-gray-500 text-xs mt-4">
-          Last Updated: December 24, 2024 | Wabegadgets © 2024
+          Last Updated: December 24, 2024 | Pixies Technologies © 2024
         </p>
       </div>
 

@@ -1,228 +1,218 @@
 <template>
-  <div class="contact-section">
-    <div class="container">
-      <div class="row">
-        <!-- Contact Information -->
-        <div class="col-md-5">
-          <div class="contact-info">
-            <h3>Our Location</h3>
-            <div class="info-item">
-              <strong>Address:</strong>
-              <address>
-                Muthaiga Square<br>
-                Nairobi, Kenya
-              </address>
-            </div>
-
-            <div class="info-item">
-              <strong>Email:</strong>
-              <p><a href="mailto:support@wabegadgets.com">info@wabegadgets.co.ke</a></p>
-            </div>
-
-            <div class="info-item">
-              <strong>Phone:</strong>
-              <p><a href="tel:+254710909198">+254 710 909 198</a></p>
-            </div>
-
-            <div class="info-item">
-              <strong>Opening Times:</strong>
-              <p>7.30 AM to 6:00 PM (Monday to Saturday)</p>
-            </div>
-
-            
-
-            <div class="about-section mt-4">
-              <strong>About Us</strong>
-              <p>
-                WabeGadgets is your premier destination for top-tier security solutions. We specialize in CCTV systems, cloud storage solutions, professional installations, and cutting-edge smart home technology. Our commitment to security excellence makes us your trusted partner in protecting what matters most.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Contact Form -->
-        <div class="col-md-7">
-          <div class="contact-form">
-            <h3>Contact Form</h3>
-            <form @submit.prevent="handleSubmit">
-              <div class="form-group">
-                <label for="name">Your Name <span class="required">*</span></label>
-                <input 
-                  type="text" 
-                  id="name"
-                  v-model="formData.name"
-                  class="form-control" 
-                  required
-                >
-              </div>
-
-              <div class="form-group">
-                <label for="phone">Phone Number <span class="required">*</span></label>
-                <input 
-                  type="tel" 
-                  id="phone"
-                  v-model="formData.phone"
-                  class="form-control" 
-                  required
-                >
-              </div>
-
-              <div class="form-group">
-                <label for="email">Email Address <span class="required">*</span></label>
-                <input 
-                  type="email" 
-                  id="email"
-                  v-model="formData.email"
-                  class="form-control" 
-                  required
-                >
-              </div>
-
-              <div class="form-group">
-                <label for="message">Message <span class="required">*</span></label>
-                <textarea 
-                  id="message"
-                  v-model="formData.message"
-                  class="form-control" 
-                  rows="5"
-                  required
-                ></textarea>
-              </div>
-
-              <button type="submit" class="btn theme-btn-1 btn-effect-1">
-                {{ isSubmitting ? 'Sending...' : 'Send Message' }}
-              </button>
-            </form>
-          </div>
-        </div>
+  <div class="contact-page">
+    <div class="page-header">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p>Get in touch with Pixies Technologies</p>
       </div>
-
-      <!-- Google Map -->
-      <div class="row mt-5">
-        <div class="col-12">
-          <div class="google-map">
-           <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d31910.443638396573!2d36.896768!3d-1.2910591999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x182f134f6924b939%3A0x9497581070a52098!2sParklands%203rd%20Avenue!3m2!1d-1.2571326999999999!2d36.811707!5e0!3m2!1sen!2ske!4v1766526632541!5m2!1sen!2ske" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+    </div>
+    
+    <div class="container">
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="info-card">
+            <h2>Phone</h2>
+            <p><a href="tel:+254798742543">+254 798 742 543</a></p>
           </div>
+          
+          <div class="info-card">
+            <h2>Email</h2>
+            <p><a href="mailto:info@pixies.co.ke">info@pixies.co.ke</a></p>
+          </div>
+          
+          <div class="info-card">
+            <h2>Location</h2>
+            <p>Nairobi, Kenya</p>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <h2>Send a Message</h2>
+          <form @submit.prevent="submitForm">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" v-model="form.name" required>
+            </div>
+            
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" v-model="form.email" required>
+            </div>
+            
+            <div class="form-group">
+              <label>Message</label>
+              <textarea v-model="form.message" rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn" :disabled="loading">
+              {{ loading ? 'Sending...' : 'Send Message' }}
+            </button>
+          </form>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script>
+<script setup>
+import { ref, reactive } from 'vue';
 import axios from 'axios';
-import { toast } from 'vue3-toastify';
 
-export default {
-  name: 'ContactForm',
-  data() {
-    return {
-      formData: {
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-      },
-      isSubmitting: false
-    }
-  },
-  methods: {
-    async handleSubmit() {
-      try {
-        this.isSubmitting = true;
-        const response = await axios.post('/api/contact', this.formData);
-        
-        if (response.data.success) {
-          toast.success('Message sent successfully!');
-          this.resetForm();
-        }
-      } catch (error) {
-        toast.error('Failed to send message. Please try again.');
-      } finally {
-        this.isSubmitting = false;
-      }
-    },
-    resetForm() {
-      this.formData = {
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-      };
-    }
+const loading = ref(false);
+const form = reactive({
+  name: '',
+  email: '',
+  message: ''
+});
+
+const submitForm = async () => {
+  loading.value = true;
+  try {
+    await axios.post('/sendmail', form);
+    alert('Message sent successfully!');
+    form.name = '';
+    form.email = '';
+    form.message = '';
+  } catch (error) {
+    alert('Failed to send message. Please try again.');
+  } finally {
+    loading.value = false;
   }
-}
+};
 </script>
 
 <style scoped>
-.contact-section {
-  padding: 80px 0;
+.contact-page {
+  min-height: 100vh;
+  background: #f9fafb;
+}
+
+.page-header {
+  background: #171616;
+  padding: 3rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+h1 {
+  color: #ffffff;
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.page-header p {
+  color: #999;
+  margin: 0;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
 }
 
 .contact-info {
-  background: #f8f9fa;
-  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info-card {
+  background: #ffffff;
+  padding: 1.5rem;
   border-radius: 8px;
+  border: 1px solid #e5e5e5;
 }
 
-.info-item {
-  margin-bottom: 20px;
+.info-card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #171616;
 }
 
-.info-item strong {
-  display: block;
-  margin-bottom: 5px;
-  color: #333;
-}
-
-.info-item p {
+.info-card p {
   margin: 0;
   color: #666;
 }
 
-.info-item a {
-  color: #666;
+.info-card a {
+  color: #95002a;
   text-decoration: none;
 }
 
-.map-btn {
-  margin: 20px 0;
+.info-card a:hover {
+  text-decoration: underline;
 }
 
 .contact-form {
-  background: #fff;
-  padding: 30px;
+  background: #ffffff;
+  padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border: 1px solid #e5e5e5;
+}
+
+.contact-form h2 {
+  margin: 0 0 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #171616;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
   color: #333;
 }
 
-.required {
-  color: #dc3545;
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
-.google-map {
-  border-radius: 8px;
-  overflow: hidden;
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #95002a;
 }
 
-.about-section {
-  padding-top: 20px;
-  border-top: 1px solid #ddd;
+.submit-btn {
+  padding: 0.75rem 1.5rem;
+  background: #95002a;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
-.about-section strong {
-  display: block;
-  margin-bottom: 10px;
+.submit-btn:hover:not(:disabled) {
+  background: #7a0022;
 }
-</style> 
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
