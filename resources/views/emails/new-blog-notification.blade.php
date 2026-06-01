@@ -110,16 +110,16 @@
         </div>
 
         <div class="social-links">
-            <a href="https://facebook.com/wabegadgets" target="_blank">
+            <a href="https://facebook.com/pixies" target="_blank">
                 <img src="{{ asset('front-assets/img/social/facebook.png') }}" alt="Facebook" class="social-icon">
             </a>
-            <a href="https://twitter.com/wabegadgets" target="_blank">
+            <a href="https://twitter.com/pixies" target="_blank">
                 <img src="{{ asset('front-assets/img/social/twitter.png') }}" alt="Twitter" class="social-icon">
             </a>
-            <a href="https://instagram.com/wabegadgets" target="_blank">
+            <a href="https://instagram.com/pixies" target="_blank">
                 <img src="{{ asset('front-assets/img/social/instagram.png') }}" alt="Instagram" class="social-icon">
             </a>
-            <a href="https://linkedin.com/company/wabegadgets" target="_blank">
+            <a href="https://linkedin.com/company/pixies" target="_blank">
                 <img src="{{ asset('front-assets/img/social/linkedin.png') }}" alt="LinkedIn" class="social-icon">
             </a>
         </div>

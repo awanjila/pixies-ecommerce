@@ -2,22 +2,22 @@
 
 {{-- Page Title (shown in browser tab) --}}
 @section('title')
-    {{ $product->product_name }} | Wabegadgets | Smart Electronics & Security Devices in Nairobi, Kenya
+    {{ $product->product_name }} | Pixies Technologies | Smart Electronics & Security Devices in Nairobi, Kenya
 @endsection
 
 {{-- Meta Title (for SEO purposes, can differ from page title) --}}
 @section('meta_title')
-    {{ $meta_title ?? $product->meta_title ?? $product->product_name . ' - Wabegadgets' }}
+    {{ $meta_title ?? $product->meta_title ?? $product->product_name . ' - Pixies Technologies' }}
 @endsection
 
 {{-- Meta Description --}}
 @section('meta_description')
-    {{ $meta_description ?? $product->product_description ?? 'Shop ' . $product->product_name . ' at Wabegadgets, Nairobi’s trusted electronics store.' }}
+    {{ $meta_description ?? $product->product_description ?? 'Shop ' . $product->product_name . ' at Pixies Technologies, Nairobi’s trusted electronics store.' }}
 @endsection
 
 {{-- Meta Keywords --}}
 @section('meta_keywords')
-    {{ $meta_keywords ?? $product->product_name . ', ' . ($product->brand->name ?? 'Wabegadgets') . ', electronics Nairobi, CCTV, smart devices' }}
+    {{ $meta_keywords ?? $product->product_name . ', ' . ($product->brand->name ?? 'Pixies Technologies') . ', electronics Nairobi, CCTV, smart devices' }}
 @endsection
 
 {{-- Meta Image --}}

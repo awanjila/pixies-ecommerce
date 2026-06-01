@@ -1,0 +1,17 @@
+{
+  "provider": {
+    "kimi": {
+      "name": "Kimi K2",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "https://api.moonshot.ai/v1",
+        "apiKey": "sk-RFuiP7fAF5l4xWWfnyG0OnExu8Nd2VLl2wKxTSvxJpFgAjiw"
+      },
+      "models": {
+        "k2": {
+          "name": "kimi-k2"
+        }
+      }
+    }
+  }
+}

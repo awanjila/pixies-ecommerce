@@ -164,9 +164,9 @@
     <h4>About Us</h4>
     <p>Discover top-quality Surgical Instruments, Medical Supplies, and Healthcare Solutions at Pixies Technologies. From surgical tools to hospital equipment, we are your trusted healthcare partner in Kenya. Shop with us for innovation and reliability!</p>
     <div class="social-links">
-        <a href="https://www.facebook.com/wabegadgets" target="_blank"><img src="facebook_icon.png" alt="Facebook"></a>
-        <a href="https://www.instagram.com/wabegadgets" target="_blank"><img src="instagram_icon.png" alt="Instagram"></a>
-        <a href="https://twitter.com/wabegadgets" target="_blank"><img src="twitter_icon.png" alt="Twitter"></a>
+        <a href="https://www.facebook.com/pixies" target="_blank"><img src="facebook_icon.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/pixies" target="_blank"><img src="instagram_icon.png" alt="Instagram"></a>
+        <a href="https://twitter.com/pixies" target="_blank"><img src="twitter_icon.png" alt="Twitter"></a>
     </div>
 </div>
 

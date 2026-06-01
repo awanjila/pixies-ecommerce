@@ -171,9 +171,9 @@
     <h4>About Us</h4>
     <p>Your trusted partner in Surgical Instruments, Medical Supplies, and Healthcare Solutions. We provide top-quality surgical tools and hospital equipment to keep your healthcare facility well-equipped and efficient.</p>
     <div class="social-links">
-        <a href="https://www.facebook.com/wabegadgets" target="_blank"><img src="facebook_icon.png" alt="Facebook"></a>
-        <a href="https://www.instagram.com/wabegadgets" target="_blank"><img src="instagram_icon.png" alt="Instagram"></a>
-        <a href="https://twitter.com/wabegadgets" target="_blank"><img src="twitter_icon.png" alt="Twitter"></a>
+        <a href="https://www.facebook.com/pixies" target="_blank"><img src="facebook_icon.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/pixies" target="_blank"><img src="instagram_icon.png" alt="Instagram"></a>
+        <a href="https://twitter.com/pixies" target="_blank"><img src="twitter_icon.png" alt="Twitter"></a>
     </div>
 </div>
 
