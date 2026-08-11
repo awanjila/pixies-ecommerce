@@ -54,6 +54,14 @@ class ProductController extends Controller
 
        // dd($validateData);
 
+        if (!$request->hasFile('product_image')) {
+            $notification = array(
+                'message' => 'Product Image is required',
+                'alert-type' => 'error'
+            );
+            return redirect()->back()->withInput($request->except('_token'))->with($notification);
+        }
+
         $product_image =$request->file('product_image');
         $name_gen= hexdec(uniqid()).'.'.$product_image->getClientOriginalExtension();
         Image::make($product_image)->resize(300, 398)->save(public_path('upload/products/'.$name_gen));
