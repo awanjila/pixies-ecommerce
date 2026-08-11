@@ -3,6 +3,7 @@
 @section('title', 'Add Product')
 
 @section('content')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
 <div class="col-lg-10 col-xl-10 mx-auto">
     <div class="card shadow-sm">
