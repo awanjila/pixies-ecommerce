@@ -159,6 +159,8 @@
             rules: {
                 product_name: {
                     required: true,
+                    minlength: 3,
+                    maxlength: 200,
                 },
                 category_id: {
                     required: true,
@@ -166,19 +168,47 @@
                 supplier_id: {
                     required: true,
                 },
+                brand_id: {
+                    required: true,
+                },
+                meta_title: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 200,
+                },
                 product_store: {
                     required: true,
+                    digits: true,
+                    min: 1,
                 },
                 buying_price: {
                     required: true,
+                    number: true,
+                    min: 0.01,
                 },
                 selling_price: {
                     required: true,
+                    number: true,
+                    min: 0.01,
+                },
+                product_description: {
+                    required: true,
+                    minlength: 10,
+                },
+                product_features: {
+                    required: true,
+                    minlength: 10,
+                },
+                product_image: {
+                    required: true,
+                    extension: 'jpeg|jpg|png|gif|webp',
                 },
             },
             messages: {
                 product_name: {
                     required: 'Please Enter Product Name',
+                    minlength: 'Product Name must be at least 3 characters',
+                    maxlength: 'Product Name must not exceed 200 characters',
                 },
                 category_id: {
                     required: 'Please Select Category',
@@ -186,14 +216,40 @@
                 supplier_id: {
                     required: 'Please Select Supplier',
                 },
+                brand_id: {
+                    required: 'Please Select Brand',
+                },
+                meta_title: {
+                    required: 'Please Enter Meta Title',
+                    minlength: 'Meta Title must be at least 3 characters',
+                    maxlength: 'Meta Title must not exceed 200 characters',
+                },
                 product_store: {
                     required: 'Please Enter Product Quantity',
+                    digits: 'Quantity must be a whole number',
+                    min: 'Quantity must be at least 1',
                 },
                 buying_price: {
                     required: 'Please Enter Buying Price',
+                    number: 'Buying Price must be a number',
+                    min: 'Buying Price must be greater than 0',
                 },
                 selling_price: {
                     required: 'Please Enter Selling Price',
+                    number: 'Selling Price must be a number',
+                    min: 'Selling Price must be greater than 0',
+                },
+                product_description: {
+                    required: 'Please Enter Product Description',
+                    minlength: 'Description must be at least 10 characters',
+                },
+                product_features: {
+                    required: 'Please Enter Product Features',
+                    minlength: 'Features must be at least 10 characters',
+                },
+                product_image: {
+                    required: 'Please Choose a Product Image',
+                    extension: 'Image must be a jpg, jpeg, png, gif or webp file',
                 },
             },
             errorElement: 'span',

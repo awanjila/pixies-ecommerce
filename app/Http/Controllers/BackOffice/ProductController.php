@@ -38,18 +38,17 @@ class ProductController extends Controller
       public function StoreProduct(Request $request){
         //  dd($request->all());
         $validateData = $request->validate([
-            'product_name'=>'required |unique:products| max:200',
-            'category_id'=>'required | max:200',
-            'supplier_id'=>'required | max:200',
-            'brand_id'=>'required | max:200',
-            'meta_title'=>'required | max:200',
-            'buying_price'=>'required |numeric',
-            'selling_price'=>'required |numeric',
-            // 'buying_date'=>'required | max:200',
-            // 'expire_date'=>'required | max:200',
-            'product_store'=>'required | max:200',
-            'product_description'=>'required',
-            'product_features'=>'required',
+            'product_name' => ['required', 'string', 'min:3', 'max:200', 'unique:products,product_name', 'regex:/^[\pL\pN\s\-&(),.\'\/]+$/u'],
+            'category_id' => ['required', 'integer', 'exists:categories,id'],
+            'supplier_id' => ['required', 'integer', 'exists:suppliers,id'],
+            'brand_id' => ['required', 'integer', 'exists:brands,id'],
+            'meta_title' => ['required', 'string', 'min:3', 'max:200'],
+            'buying_price' => ['required', 'numeric', 'min:0.01', 'regex:/^\d+(\.\d{1,2})?$/'],
+            'selling_price' => ['required', 'numeric', 'gte:buying_price', 'regex:/^\d+(\.\d{1,2})?$/'],
+            'product_store' => ['required', 'integer', 'min:1'],
+            'product_description' => ['required', 'string', 'min:10'],
+            'product_features' => ['required', 'string', 'min:10'],
+            'product_image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif,webp', 'max:2048'],
         ]);
 
 
