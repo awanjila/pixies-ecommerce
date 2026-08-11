@@ -31,7 +31,7 @@
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
+                            <table id="datatable-buttons" class="table table-striped dt-responsive w-100 table-sm">
                                 <thead>
                                 <tr>
                                     <th>#</th>
@@ -51,9 +51,9 @@
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
                                     <td>
-                                        <img src="{{ asset($item->product_image) }}" style="width: 50px; height: 40px; object-fit: cover; border-radius: 6px;" alt="{{ $item->product_name }}">
+                                        <img src="{{ asset($item->product_image) }}" style="width: 40px; height: 32px; object-fit: cover; border-radius: 6px;" alt="{{ $item->product_name }}">
                                     </td>
-                                    <td class="fw-semibold">{{ $item->product_name }}</td>
+                                    <td class="fw-semibold text-truncate" style="max-width: 180px;">{{ $item->product_name }}</td>
                                     <td>
                                         @if($item->category)
                                             {{ $item->category->category_name }}
@@ -69,7 +69,7 @@
                                         @endif
                                     </td>
                                     <td><span class="badge bg-soft-info text-info">{{ $item->product_code }}</span></td>
-                                    <td>KSh {{ number_format($item->selling_price, 2) }}</td>
+                                    <td class="text-nowrap">KSh {{ number_format($item->selling_price, 2) }}</td>
                                     <td class="text-center">{{ $item->product_store }}</td>
                                     <td>
                                         @php
@@ -83,10 +83,10 @@
                                             <span class="badge badge-soft-success">In Stock</span>
                                         @endif
                                     </td>
-                                    <td>
-                                        <a href="{{ route('edit.product', $item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light" title="Edit"><i class="fa fa-pencil-alt"></i></a>
-                                        <a href="{{ route('barcode.product', $item->id) }}" class="btn btn-info rounded-pill waves-effect waves-light" title="Details"><i class="fa fa-barcode"></i></a>
-                                        <a href="{{ route('delete.product', $item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light btn-delete" data-product="{{ $item->product_name }}" title="Delete"><i class="fa fa-trash-alt"></i></a>
+                                    <td class="text-nowrap">
+                                        <a href="{{ route('edit.product', $item->id) }}" class="btn btn-blue btn-sm rounded-pill waves-effect waves-light" title="Edit"><i class="fa fa-pencil-alt"></i></a>
+                                        <a href="{{ route('barcode.product', $item->id) }}" class="btn btn-info btn-sm rounded-pill waves-effect waves-light" title="Details"><i class="fa fa-barcode"></i></a>
+                                        <a href="{{ route('delete.product', $item->id) }}" class="btn btn-danger btn-sm rounded-pill waves-effect waves-light btn-delete" data-product="{{ $item->product_name }}" title="Delete"><i class="fa fa-trash-alt"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach

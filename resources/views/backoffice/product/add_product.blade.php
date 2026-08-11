@@ -3,6 +3,7 @@
 @section('title', 'Add Product')
 
 @section('content')
+<link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
 <div class="col-lg-10 col-xl-10 mx-auto">
     <div class="card shadow-sm">
         <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
@@ -199,8 +200,11 @@
                             <div class="form-group mb-3">
                                 <label for="product_description" class="form-label required">Product Description</label>
                                 <textarea name="product_description"
-                                          class="form-control @error('product_description') is-invalid @enderror"
+                                          class="form-control d-none @error('product_description') is-invalid @enderror"
                                           id="product_description">{{ old('product_description') }}</textarea>
+                                <div class="quill-wrapper @error('product_description') is-invalid @enderror">
+                                    <div id="editor_description"></div>
+                                </div>
                                 @error('product_description')
                                 <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -211,8 +215,11 @@
                             <div class="form-group mb-3">
                                 <label for="product_features" class="form-label required">Product Features</label>
                                 <textarea name="product_features"
-                                          class="form-control @error('product_features') is-invalid @enderror"
+                                          class="form-control d-none @error('product_features') is-invalid @enderror"
                                           id="product_features">{{ old('product_features') }}</textarea>
+                                <div class="quill-wrapper @error('product_features') is-invalid @enderror">
+                                    <div id="editor_features"></div>
+                                </div>
                                 @error('product_features')
                                 <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -304,10 +311,74 @@
     #showImage:hover {
         border-color: #007bff;
     }
+
+    .quill-wrapper .ql-toolbar {
+        border-radius: 8px 8px 0 0;
+    }
+
+    .quill-wrapper .ql-container {
+        border-radius: 0 0 8px 8px;
+        min-height: 120px;
+        font-size: 14px;
+    }
+
+    .quill-wrapper.is-invalid .ql-toolbar,
+    .quill-wrapper.is-invalid .ql-container {
+        border-color: #f46a6a;
+    }
 </style>
 
+<script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
+        var toolbarOptions = [
+            [{ 'header': [2, 3, false] }],
+            ['bold', 'italic', 'underline', 'strike'],
+            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+            ['link'],
+            ['clean']
+        ];
+
+        var descriptionQuill = new Quill('#editor_description', {
+            theme: 'snow',
+            placeholder: 'Enter detailed product description...',
+            modules: { toolbar: toolbarOptions }
+        });
+
+        var featuresQuill = new Quill('#editor_features', {
+            theme: 'snow',
+            placeholder: 'Enter product features (one per line)...',
+            modules: { toolbar: toolbarOptions }
+        });
+
+        descriptionQuill.root.innerHTML = {!! json_encode(old('product_description', '')) !!};
+        featuresQuill.root.innerHTML = {!! json_encode(old('product_features', '')) !!};
+
+        function syncQuill() {
+            $('#product_description').val(descriptionQuill.root.innerHTML);
+            $('#product_features').val(featuresQuill.root.innerHTML);
+        }
+
+        $.validator.addMethod('quillRequired', function (value, element) {
+            var text = (descriptionQuill.getText() || '').trim();
+            return text.length > 0;
+        }, 'Please enter product description');
+
+        $.validator.addMethod('quillMin', function (value, element, param) {
+            var text = (descriptionQuill.getText() || '').trim();
+            return text.length >= param;
+        }, 'Please enter at least 10 characters');
+
+        $.validator.addMethod('featuresRequired', function (value, element) {
+            var text = (featuresQuill.getText() || '').trim();
+            return text.length > 0;
+        }, 'Please enter product features');
+
+        $.validator.addMethod('featuresMin', function (value, element, param) {
+            var text = (featuresQuill.getText() || '').trim();
+            return text.length >= param;
+        }, 'Please enter at least 10 characters');
+
         // Form validation
         $('#productForm').validate({
             rules: {
@@ -346,18 +417,19 @@
                     min: 1,
                 },
                 product_description: {
-                    required: true,
-                    minlength: 10,
+                    quillRequired: true,
+                    quillMin: 10,
                 },
                 product_features: {
-                    required: true,
-                    minlength: 10,
+                    featuresRequired: true,
+                    featuresMin: 10,
                 },
                 product_image: {
                     required: true,
                     extension: 'jpeg|jpg|png|gif|webp',
                 },
             },
+            ignore: [],
             messages: {
                 product_name: {
                     required: 'Please enter product name',
@@ -393,14 +465,6 @@
                     digits: 'Quantity must be a whole number',
                     min: 'Quantity must be at least 1',
                 },
-                product_description: {
-                    required: 'Please enter product description',
-                    minlength: 'Description must be at least 10 characters',
-                },
-                product_features: {
-                    required: 'Please enter product features',
-                    minlength: 'Features must be at least 10 characters',
-                },
                 product_image: {
                     required: 'Please select a product image',
                     extension: 'Please select a valid image file (jpg, jpeg, png, gif, webp)',
@@ -414,11 +478,20 @@
             },
             highlight: function (element, errorClass, validClass) {
                 $(element).addClass('is-invalid').removeClass('is-valid');
+                var id = $(element).attr('id');
+                if (id === 'product_description' || id === 'product_features') {
+                    $(element).closest('.form-group').find('.quill-wrapper').addClass('is-invalid');
+                }
             },
             unhighlight: function (element, errorClass, validClass) {
                 $(element).removeClass('is-invalid').addClass('is-valid');
+                var id = $(element).attr('id');
+                if (id === 'product_description' || id === 'product_features') {
+                    $(element).closest('.form-group').find('.quill-wrapper').removeClass('is-invalid');
+                }
             },
             submitHandler: function (form) {
+                syncQuill();
                 $('#submitBtn').prop('disabled', true).html('<span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span> Saving...');
                 form.submit();
             }
@@ -443,10 +516,13 @@
 
         // Reset form functionality
         $('#resetBtn').click(function () {
+            descriptionQuill.root.innerHTML = '';
+            featuresQuill.root.innerHTML = '';
             $('#showImage').attr('src', '{{ url('upload/no_image.jpg') }}');
             $('.is-invalid').removeClass('is-invalid');
             $('.is-valid').removeClass('is-valid');
             $('.invalid-feedback').remove();
+            $('#productForm')[0].reset();
         });
 
         // Auto-format price inputs
